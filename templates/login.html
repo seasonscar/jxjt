@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>登录</title>
     <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../static/font/iconfont.css">
     <link rel="stylesheet" href="../static/css/base.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -16,15 +17,15 @@
 <body>
 
 <!-- HTML代码 -->
-<div id="login">
+<div id="login" class="wrap_all">
     <div class="header layui-clear">
-        <div class="layui-container">
+        <div class="layui-main">
             <div class="logo"></div>
             <div class="title">江西省交通流量调查管理平台</div>
         </div>
     </div>
     <div class="content">
-        <div class="layui-container">
+        <div class="layui-main">
             <div class="login_form">
                 <h3>登录</h3>
                 <form class="layui-form" action="">
@@ -39,7 +40,7 @@
                     </div>
                 </form>
                 <div class="layui-text">
-                    <a href="#">联系管理员</a>
+                    <a href="">联系管理员</a>
                 </div>
             </div>
         </div>
@@ -50,16 +51,7 @@
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use('form', function(){
-        var form = layui.form;
-
-        //监听提交
-        form.on('submit(formLogin)', function(data){
-            console.log(data.field);
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
-    });
+    layui.use('form');
 </script>
 </body>
 </html>

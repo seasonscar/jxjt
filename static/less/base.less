@@ -9,3 +9,39 @@ body, input, textarea, select, button {
 body {
   font-family: "Microsoft YaHei";
 }
+.wrap_all {
+  min-width:1170px;
+}
+
+#header {
+  background:#021535;
+  .layui-main {
+    .logo {
+      display:block;
+      width:45px;
+      height:47px;
+      background:url(../img/logo.png) 0 -46px no-repeat;
+      position:absolute;
+      left:20px;
+      top:6px;
+    }
+    .layui-nav {
+      position:absolute;
+      left:100px;
+      top:0;
+      .layui-nav-item {
+        margin-right:20px;
+        a {
+          height:60px;
+          > i.iconfont {
+            margin-right:5px;
+            font-size: 20px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+          }
+        }
+      }
+    }
+  }
+}

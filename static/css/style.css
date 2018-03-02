@@ -1,3 +1,4 @@
+/* 登录 */
 #login {
   position: absolute;
   top: 50%;
@@ -25,11 +26,11 @@
   background: #021535;
   height: 600px;
 }
-#login .content .layui-container {
+#login .content .layui-main {
   height: 100%;
   background: url(../img/login_bg.png) center left no-repeat;
 }
-#login .content .layui-container .login_form {
+#login .content .layui-main .login_form {
   width: 300px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.8) !important;
@@ -39,16 +40,16 @@
   right: 0;
   top: 145px;
 }
-#login .content .layui-container .login_form h3 {
+#login .content .layui-main .login_form h3 {
   padding-bottom: 15px;
 }
-#login .content .layui-container .login_form .layui-form-item button.log_on {
+#login .content .layui-main .login_form .layui-form-item button.log_on {
   width: 100%;
 }
-#login .content .layui-container .login_form .layui-text {
+#login .content .layui-main .login_form .layui-text {
   text-align: right;
 }
-#login .content .layui-container .login_form .layui-text a {
+#login .content .layui-main .login_form .layui-text a {
   color: #1E9FFF;
 }
 #login .footer {
@@ -57,6 +58,7 @@
   text-align: center;
   color: #999;
 }
+/* 首页 */
 @media screen and (max-height: 710px) {
   #login {
     top: 0;

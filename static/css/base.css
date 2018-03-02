@@ -1,3 +1,15 @@
-body {
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+input,
+textarea,
+select,
+button {
   color: #666;
+}
+body {
+  font-family: "Microsoft YaHei";
 }

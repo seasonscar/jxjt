@@ -1,3 +1,10 @@
+#login {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -360px;
+}
 #login .header {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -25,18 +32,34 @@
 #login .content .layui-container .login_form {
   width: 300px;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.6) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
   background: #fff;
   border-radius: 5px;
   position: absolute;
   right: 0;
+  top: 145px;
 }
 #login .content .layui-container .login_form h3 {
   padding-bottom: 15px;
+}
+#login .content .layui-container .login_form .layui-form-item button.log_on {
+  width: 100%;
+}
+#login .content .layui-container .login_form .layui-text {
+  text-align: right;
+}
+#login .content .layui-container .login_form .layui-text a {
+  color: #1E9FFF;
 }
 #login .footer {
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
   color: #999;
+}
+@media screen and (max-height: 710px) {
+  #login {
+    top: 0;
+    margin-top: 0;
+  }
 }

@@ -3,21 +3,59 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>开始使用layui</title>
+    <title>登录</title>
     <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="../static/js/html5.min.js"></script>
+    <script src="../static/js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
 
-<!-- 你的HTML代码 -->
+<!-- HTML代码 -->
+<div id="login">
+    <div class="header layui-clear">
+        <div class="layui-container">
+            <div class="logo"></div>
+            <div class="title">江西省交通流量调查管理平台</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="layui-container">
+            <div class="login_form">
+                <h3>登录</h3>
+                <form class="layui-form" action="">
+                    <div class="layui-form-item">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-item">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    </div><br /><br />
+                    <div class="layui-form-item">
+                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="formLogin">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">版权公告&nbsp;©&nbsp;2017-2018&nbsp;xxx集团控股有限公司及特许人版权所有</div>
+</div>
 
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['layer', 'form'], function(){
-        var layer = layui.layer
-            ,form = layui.form;
+    layui.use('form', function(){
+        var form = layui.form;
 
-        layer.msg('Hello World22');
+        //监听提交
+        form.on('submit(formLogin)', function(data){
+            console.log(data.field);
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
     });
 </script>
 </body>

@@ -25,6 +25,8 @@ body {
 }
 .layui-layout-admin .layui-body .layui-main {
   background: #f7f7f7;
+  min-height: 100%;
+  padding: 20px;
 }
 .wrap_all {
   min-width: 1170px;
@@ -81,4 +83,9 @@ body {
 #footer {
   background: #021535;
   text-align: center;
+}
+/* 内容块 */
+.well > h4 {
+  color: #333;
+  padding-bottom: 20px;
 }

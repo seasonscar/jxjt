@@ -12,6 +12,9 @@ body {
 .wrap_all {
   min-width:1170px;
 }
+.body_bg {
+  background:#eaedf2;
+}
 
 #header {
   background:#021535;
@@ -22,15 +25,16 @@ body {
       height:47px;
       background:url(../img/logo.png) 0 -46px no-repeat;
       position:absolute;
-      left:20px;
+      left:0;
       top:6px;
     }
     .layui-nav {
       position:absolute;
       left:100px;
       top:0;
+      right:0;
+      background:transparent;
       .layui-nav-item {
-        margin-right:20px;
         a {
           height:60px;
           > i.iconfont {
@@ -39,6 +43,25 @@ body {
             vertical-align: middle;
             position: relative;
             top: -1px;
+          }
+        }
+        &.nav_user {
+          position: absolute;
+          right: 73px;
+          top: 0;
+          .layui-nav-img {
+            margin-left:10px;
+            margin-right:0;
+          }
+        }
+        &.nav_logout {
+          position: absolute;
+          right: 0;
+          top: 0;
+          > a {
+            > i {
+              font-size:28px;
+            }
           }
         }
       }

@@ -16,6 +16,9 @@ body {
 .wrap_all {
   min-width: 1170px;
 }
+.body_bg {
+  background: #eaedf2;
+}
 #header {
   background: #021535;
 }
@@ -25,16 +28,15 @@ body {
   height: 47px;
   background: url(../img/logo.png) 0 -46px no-repeat;
   position: absolute;
-  left: 20px;
+  left: 0;
   top: 6px;
 }
 #header .layui-main .layui-nav {
   position: absolute;
   left: 100px;
   top: 0;
-}
-#header .layui-main .layui-nav .layui-nav-item {
-  margin-right: 20px;
+  right: 0;
+  background: transparent;
 }
 #header .layui-main .layui-nav .layui-nav-item a {
   height: 60px;
@@ -45,4 +47,21 @@ body {
   vertical-align: middle;
   position: relative;
   top: -1px;
+}
+#header .layui-main .layui-nav .layui-nav-item.nav_user {
+  position: absolute;
+  right: 73px;
+  top: 0;
+}
+#header .layui-main .layui-nav .layui-nav-item.nav_user .layui-nav-img {
+  margin-left: 10px;
+  margin-right: 0;
+}
+#header .layui-main .layui-nav .layui-nav-item.nav_logout {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#header .layui-main .layui-nav .layui-nav-item.nav_logout > a > i {
+  font-size: 28px;
 }

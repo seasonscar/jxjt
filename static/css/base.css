@@ -15,6 +15,16 @@ body {
 }
 .layui-layout-admin .layui-main {
   max-width: 1366px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.layui-layout-admin .layui-body,
+.layui-layout-admin .layui-footer {
+  left: 0;
+}
+.layui-layout-admin .layui-body .layui-main {
+  background: #f7f7f7;
 }
 .wrap_all {
   min-width: 1170px;
@@ -67,4 +77,8 @@ body {
 }
 #header .layui-main .layui-nav .layui-nav-item.nav_logout > a > i {
   font-size: 28px;
+}
+#footer {
+  background: #021535;
+  text-align: center;
 }

@@ -63,7 +63,62 @@
 
 /* 首页 */
 #home {
-
+  .layui-body {
+    .layui-main {
+      .well {
+        .grid {
+          > h5.title_sm {
+            padding-bottom:10px;
+            span.sqa_sm {
+              display:inline-block;
+              width:9px;
+              height:9px;
+              background:#666;
+              margin-right:5px;
+            }
+          }
+          .sqa_count {
+            padding:10px;
+            border-radius:4px;
+            &.blue {
+              background:#cee9f4;
+              color:#29aae1;
+            }
+            &.orange {
+              background:#f9e4c7;
+              color:#ff9900;
+            }
+            &.gray {
+              background:#dadada;
+              color:#666;
+            }
+            &.red {
+              background:#ecced0;
+              color:#c2272b;
+            }
+            .title {
+              text-align: center;
+              float: left;
+              > span {
+                display:block;
+                &.iconfont {
+                  margin-bottom: 5px;
+                  font-size: 24px;
+                }
+              }
+            }
+            .num {
+              margin-left:60px;
+              font-size:25px;
+              font-weight:bold;
+              padding-top:7px;
+              text-align:right;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-height: 710px) {

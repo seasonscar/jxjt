@@ -33,6 +33,11 @@ body {
 .body_bg {
   background:#eaedf2;
 }
+.text_ellipsis {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
 
 #header {
   background:#021535;
@@ -94,8 +99,14 @@ body {
 
 /* 内容块 */
 .well {
+  padding-bottom:30px;
   > h4 {
     color:#333;
-    padding-bottom:20px;
+    padding-bottom:15px;
   }
+}
+
+/* 字号 */
+.font_12 {
+  font-size:12px;
 }

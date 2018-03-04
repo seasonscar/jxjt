@@ -10,8 +10,8 @@
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
     <style>
         .popWinDiv {
-            height: 200px;
-            width: 300px;
+            height: 314px;
+            width: 500px;
         }
     </style>
 </head>
@@ -26,8 +26,53 @@
 
 <div id="popWinHtml" style="display: none">
     <div class="popWinDiv">
-        <input type="checkbox" name="demo"/>HTML内容
+        <form class="layui-form" action="">
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">设备识别码</label>
+                <div class="layui-input-block" style="width:200px;">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入设备识别码"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="color:#a5a5a5;">设备型号</label>
+                <div class="layui-input-block" style="width:200px;">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入设备型号"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="color:#a5a5a5;">观测站编号</label>
+                <div class="layui-input-block" style="width:200px;">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站编号"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="color:#a5a5a5;">观测站名称</label>
+                <div class="layui-input-block" style="width:200px;">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="color:#a5a5a5;">观测类型</label>
+                <div class="layui-input-block" style="width:200px;">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </form>
+        <div class="layui-layer-title" style="height:50px;background-color: rgb(2, 21, 53); color: rgb(255, 255, 255); cursor: move;text-align: center;">
+            <button class="layui-btn layui-btn-radius layui-btn-primary"  style="width:91px;margin-top: 6px;">重填</button>
+            <button class="layui-btn layui-btn-radius layui-btn-normal" style="width:91px;margin-top: 6px;">确定</button>
+        </div>
     </div>
+
 </div>
 <script src="../layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
@@ -41,13 +86,11 @@
                 var type = othis.data('type'), text = "lkm";
                 layer.open({
                     type: 1
-                    ,title:["添加设备","background-color:#021535;color:#ffffff"]
-                    ,area: ['500px', '600px']
+                    , title: ["添加设备", "background-color:#021535;color:#ffffff"]
+                    , area: ['500px','380px']
                     , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
                     , id: 'layerDemo' + type //防止重复弹出
                     , content: $("#popWinHtml").html()
-                    , btn: ['重填','确定']
-                    , btnAlign: 'c' //按钮居中
                     , shade: 0 //不显示遮罩
                     , yes: function () {
                         layer.closeAll();

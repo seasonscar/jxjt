@@ -128,6 +128,10 @@ body {
 .well > h4 > .layui-input-inline > .layui-btn + .layui-btn {
   margin-left: 5px;
 }
+.well > .well_content {
+  background: #fff;
+  padding: 10px;
+}
 /* 搜索 */
 .search {
   position: relative;
@@ -184,6 +188,7 @@ body {
 }
 .layui-table.style_1 > tbody > tr > td {
   text-align: center;
+  border-top: 1px solid #f1f1f1;
 }
 .layui-table.style_1 > tbody > tr > td > span.text_gray {
   color: #999;

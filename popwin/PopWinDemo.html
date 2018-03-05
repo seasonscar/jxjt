@@ -13,6 +13,10 @@
             height: 314px;
             width: 500px;
         }
+        .layui-layer-page .layui-layer-content {
+            position: relative;
+            overflow: visible !important;
+        }
     </style>
 </head>
 <body>
@@ -27,43 +31,46 @@
 <div id="popWinHtml" style="display: none">
     <div class="popWinDiv">
         <form class="layui-form" action="">
-            <div class="layui-form-item" style="margin-top: 20px;">
+            <div class="layui-form-item" style="margin-top: 20px;margin-left: 40px;">
                 <label class="layui-form-label" style="color:#a5a5a5;">设备识别码</label>
-                <div class="layui-input-block" style="width:200px;">
+                <div class="layui-input-inline" style="width:200px;">
                     <input type="text" name="title" required lay-verify="required" placeholder="请输入设备识别码"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="margin-left: 40px;">
                 <label class="layui-form-label" style="color:#a5a5a5;">设备型号</label>
-                <div class="layui-input-block" style="width:200px;">
+                <div class="layui-input-inline" style="width:200px;">
                     <input type="text" name="title" required lay-verify="required" placeholder="请输入设备型号"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="margin-left: 40px;">
                 <label class="layui-form-label" style="color:#a5a5a5;">观测站编号</label>
-                <div class="layui-input-block" style="width:200px;">
+                <div class="layui-input-inline" style="width:200px;">
                     <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站编号"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="margin-left: 40px;">
                 <label class="layui-form-label" style="color:#a5a5a5;">观测站名称</label>
-                <div class="layui-input-block" style="width:200px;">
+                <div class="layui-input-inline" style="width:200px;">
                     <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
                            autocomplete="off" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="margin-left: 40px;">
                 <label class="layui-form-label" style="color:#a5a5a5;">观测类型</label>
-                <div class="layui-input-block" style="width:200px;">
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
-                           autocomplete="off" class="layui-input">
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao">
+                        <option value="1">断面|上行|下行</option>
+                        <option value="2">断面|上行|下行</option>
+                        <option value="3">断面|上行|下行</option>
+                    </select>
                 </div>
             </div>
         </form>
@@ -77,8 +84,8 @@
 <script src="../layui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
-    layui.use('layer', function () { //独立版的layer无需执行这一句
-        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+    layui.use(['form','layer'], function () { //独立版的layer无需执行这一句
+        var $ = layui.jquery,form = layui.form, layer = layui.layer; //独立版的layer无需执行这一句
 
         //触发事件
         var active = {
@@ -87,7 +94,7 @@
                 layer.open({
                     type: 1
                     , title: ["添加设备", "background-color:#021535;color:#ffffff"]
-                    , area: ['500px','380px']
+                    , area: ['500px','379.5px']
                     , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
                     , id: 'layerDemo' + type //防止重复弹出
                     , content: $("#popWinHtml").html()
@@ -96,6 +103,7 @@
                         layer.closeAll();
                     }
                 });
+                form.render();
             }
         };
 

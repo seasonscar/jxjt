@@ -114,6 +114,9 @@
 #device .layui-body .layui-main .main_left .station_list {
   border: 1px solid #e6e6e6;
   border-bottom: none;
+  max-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 #device .layui-body .layui-main .main_left .station_list li {
   padding: 10px;

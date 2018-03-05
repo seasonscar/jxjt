@@ -39,6 +39,7 @@
         }
     </style>
     <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 </head>
 <body class="body_bg">
 
@@ -61,7 +62,7 @@
     </div>
     <!-- 主内容 -->
     <div class="layui-body wrap_all">
-        <div class="layui-main">
+        <div class="layui-main frame_cols_2 layui-clear">
             <div class="main_left">
                 <!-- 观测站列表 -->
                 <div class="well">
@@ -69,7 +70,7 @@
                     <div class="well_content">
                         <div class="search">
                             <input type="text" name="title" placeholder="输入观测站名称或编号" autocomplete="off" class="layui-input">
-                            <button type="btn" class="layui-icon">&#xe615;</button>
+                            <button type="btn" class="iconfont icon-fangdajing"></button>
                         </div>
                         <ul class="station_list">
                             <li><a href="">G105L101360721<br />赣县沙地</a></li>
@@ -82,167 +83,145 @@
                 </div>
             </div>
             <div class="main_right">
-                <div class="well">
-                    <h4>当月统计</h4>
-                    <div class="well_content">
-                        <!--百度地图容器-->
-                        <div style="width:250px;height:150px;border:#ccc solid 1px;" id="dituContent"></div>
-                    </div>
-                </div>
-                <!-- 统计设备 -->
-                <div class="well">
-                    <h4>设备列表
-                        <span class="tip">（正在显示第&nbsp;<span>50-60</span>&nbsp;条，共&nbsp;<span>487</span>&nbsp;条）</span>
-                        <div class="layui-input-inline">
-                            <div class="search">
-                                <input type="text" name="title" required="" lay-verify="required" placeholder="输入要搜索的观测站名称或编号" autocomplete="off" class="layui-input">
-                                <button type="btn" class="layui-icon">&#xe615;</button>
+                <div class="main_right_wrap">
+                    <div class="well dev_info">
+                        <h4>当月统计</h4>
+                        <div class="well_content layui-clear">
+                            <!--百度地图容器-->
+                            <div style="width:250px;height:150px;border:#ccc solid 1px;" class="map" id="map"></div>
+                            <div class="info">
+                                <div class="layui-inline">
+                                    <p class="text_ellipsis" title="设备识别码：0071154316060122">设备识别码：<a href="">0071154316060122</a></p>
+                                    <p class="text_ellipsis" title="设备型号：JYX-I-C">设备型号：JYX-I-C</p>
+                                    <p class="text_ellipsis" title="观测类型：断面">观测类型：断面</p>
+                                    <p class="text_ellipsis" title="生产厂商：辽宁金洋科技发展集团有限公司">生产厂商：辽宁金洋科技发展集团有限公司</p>
+                                    <p class="text_ellipsis" title="经度：39.1144&nbsp;&nbsp;纬度：117.222">经度：39.1144&nbsp;&nbsp;纬度：117.222</p>
+                                </div>
+                                <div class="layui-inline">
+                                    <p class="text_ellipsis" title="数据处理周期：5分钟">数据处理周期：5分钟</p>
+                                    <p class="text_ellipsis" title="调查内容：01">调查内容：01</p>
+                                    <p class="text_ellipsis" title="跟车百分比鉴别时间：10">跟车百分比鉴别时间：10</p>
+                                    <p class="text_ellipsis" title="上级服务平台：36.2.11.5">上级服务平台：<a href="">36.2.11.5</a> </p>
+                                    <p class="text_ellipsis" title="海拔高度：392">海拔高度：392</p>
+                                </div>
                             </div>
-                            <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs">添加设备</button>
+                            <div class="radar">
+                                <div id="radar" style="height:100%;"></div>
+                            </div>
                         </div>
-                    </h4>
-                    <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
-                        <colgroup>
-                            <col width="120">
-                            <col width="60">
-                            <col width="60">
-                            <col width="60">
-                            <col width="60">
-                            <col width="100">
-                            <col width="60">
-                            <col width="120">
-                            <col width="120">
-                            <col width="100">
-                            <col>
-                            <col width="60">
-                            <col width="100">
-                        </colgroup>
-                        <thead>
-                        <tr>
-                            <th>观测站</th>
-                            <th>方向</th>
-                            <th>完整率</th>
-                            <th>及时率</th>
-                            <th>异常率</th>
-                            <th>交通量<br />错误/总计</th>
-                            <th>时间<br />序号</th>
-                            <th>传输数量（条）<br />超前/及时/滞后</th>
-                            <th>时间偏差（分）<br />最大/最小/平均</th>
-                            <th>最后数据时间</th>
-                            <th>设备</th>
-                            <th>故障<br />代码</th>
-                            <th>操作</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div id="page" class="text_center layui-table-page"></div>
+                    </div>
+                    <!-- 统计设备 -->
+                    <div class="well">
+                        <h4>设备列表
+                            <div class="layui-input-inline font_12">
+                                <form class="layui-form">
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">观测日期</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="date" id="date" placeholder="" autocomplete="off" class="layui-input">
+                                                <span class="iconfont icon-riqi"></span>
+                                            </div>
+                                            <label class="layui-form-label">车道编号</label>
+                                            <div class="layui-input-inline">
+                                                <select name="lane" lay-verify="">
+                                                    <option value="">请选择一个车道</option>
+                                                    <option value="1">01</option>
+                                                    <option value="2">02</option>
+                                                    <option value="3">03</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </h4>
+                        <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
+                            <colgroup>
+                                <col width="60">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>统计<br />时间</th>
+                                    <th>中小客<br />流量/平均速度</th>
+                                    <th>大客车<br />流量/平均速度</th>
+                                    <th>小货车<br />流量/平均速度</th>
+                                    <th>中货车<br />流量/平均速度</th>
+                                    <th>大货车<br />流量/平均速度</th>
+                                    <th>特大货<br />流量/平均速度</th>
+                                    <th>集装箱<br />流量/平均速度</th>
+                                    <th>拖拉机<br />流量/平均速度</th>
+                                    <th>摩托车<br />流量/平均速度</th>
+                                    <th>接收<br />时间戳</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0:05</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>2018-01-19<br />10:10:10.196</td>
+                                </tr>
+                                <tr>
+                                    <td>0:05</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>2018-01-19<br />10:10:10.196</td>
+                                </tr>
+                                <tr>
+                                    <td>0:05</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>2018-01-19<br />10:10:10.196</td>
+                                </tr>
+                                <tr>
+                                    <td>0:05</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>1234/58</td>
+                                    <td>2018-01-19<br />10:10:10.196</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="page" class="text_center layui-table-page"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,14 +233,19 @@
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['laypage', 'element'], function(){
+    layui.use(['laypage', 'element', 'form', 'laydate'], function(){
         var laypage = layui.laypage
-            ,element = layui.element;
+            ,element = layui.element
+            ,laydate = layui.laydate;
 
         laypage.render({
             elem: 'page'
             ,count: 10 //数据总数，从服务端得到
             ,theme: '#1E9FFF' //自定义选中色值
+        });
+        laydate.render({
+            elem: '#date'
+            ,theme: 'blue',
         });
     });
 
@@ -275,7 +259,7 @@
 
     //创建地图函数：
     function createMap() {
-        var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+        var map = new BMap.Map("map"); //在百度地图容器中创建一个地图
         var point = new BMap.Point(119.37381539957482,34.76244267746335); //定义一个中心点坐标
         map.centerAndZoom(point, 8); //设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map; //将map变量存储在全局
@@ -392,6 +376,59 @@
         return icon;
     }
     initMap(); //创建和初始化地图
+
+    var dom = document.getElementById("radar");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        title: {
+            text: ''
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            show: false
+        },
+        radar: [
+            {
+                indicator: [
+                    { name: '及时率',   max: 100},
+                    { name: '完整率',   max: 100},
+                    { name: '在线率',   max: 100},
+                    { name: '最大偏差', max: 100},
+                    { name: '正确率',   max: 100}
+                ],
+                center: ['50%','55%'],
+                radius: 50,
+                name: {
+                    textStyle: {
+                        color:'#666'
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                type: 'radar',
+                tooltip: {
+                    trigger: 'item'
+                },
+                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                data: [
+                    {
+                        value: [60,73,85,40],
+                        name: '某软件'
+                    }
+                ]
+            }
+        ]
+    };
+    ;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
 </script>
 </body>
 </html>

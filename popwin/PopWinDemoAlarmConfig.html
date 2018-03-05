@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+    <style>
+        .popWinDiv {
+            height: 314px;
+            width: 600px;
+            overflow: visible !important;
+        }
+        .layui-layer-page .layui-layer-content {
+            position: relative;
+            overflow: visible !important;
+        }
+    </style>
+</head>
+<body>
+<div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+    <button data-method="popWin" data-type="auto" class="layui-btn layui-btn-normal">弹出框</button>
+</div>
+
+<!-- 示例-970 -->
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862"
+     data-ad-slot="3820120620"></ins>
+
+<div id="popWinHtml" style="display: none">
+    <div class="popWinDiv">
+        <form class="layui-form" action="">
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">设备掉线</label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao" style="width:85px;">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao">
+                        <option value="1">提醒</option>
+                        <option value="2">一般</option>
+                        <option value="3" selected="">严重</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">设备上线</label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="isAlarm" lay-filter="aihao" style="width:85px;">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="AlarmLevel" lay-filter="aihao">
+                        <option value="1" selected="">提醒</option>
+                        <option value="2">一般</option>
+                        <option value="3">严重</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">未知设备注册</label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao" style="width:85px;">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao">
+                        <option value="1">提醒</option>
+                        <option value="2" selected="">一般</option>
+                        <option value="3">严重</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">数据未上报</label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao" style="width:85px;">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao">
+                        <option value="1">提醒</option>
+                        <option value="2">一般</option>
+                        <option value="3"  selected="">严重</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;"></label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao" style="width:55px;">
+                        <option value=""></option>
+                        <option value="1">60分钟</option>
+                        <option value="0">50分钟</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 20px;">
+                <label class="layui-form-label" style="color:#a5a5a5;">数据上报错误</label>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao" style="width:85px;">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width:150px;">
+                    <select name="interest" lay-filter="aihao">
+                        <option value="1">提醒</option>
+                        <option value="2">一般</option>
+                        <option value="3"  selected="">严重</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="layui-layer-title"
+             style="height:50px;background-color: rgb(2, 21, 53); color: rgb(255, 255, 255); cursor: move;text-align: center;">
+            <button class="layui-btn layui-btn-radius layui-btn-primary" style="width:91px;margin-top: 6px;">重填</button>
+            <button class="layui-btn layui-btn-radius layui-btn-normal" style="width:91px;margin-top: 6px;">确定</button>
+        </div>
+    </div>
+
+</div>
+<script src="../layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+
+    layui.use(['form', 'layedit', 'laydate', 'layer'], function () { //独立版的layer无需执行这一句
+        var $ = layui.jquery, layer = layui.layer, //独立版的layer无需执行这一句
+            form = layui.form;
+
+        //触发事件
+        var active = {
+            popWin: function (othis) {
+                var type = othis.data('type'), text = "lkm";
+                layer.open({
+                    type: 1
+                    , title: ["添加设备", "background-color:#021535;color:#ffffff"]
+                    , area: ['600px', '496.8px']
+                    , offset: type //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+                    , id: 'layerDemo' + type //防止重复弹出
+                    , content: $("#popWinHtml").html()
+                    , shade: 0 //不显示遮罩
+                    , yes: function () {
+                        layer.closeAll();
+                    }
+                });
+                form.render();
+            }
+        };
+
+        $('#layerDemo .layui-btn').on('click', function () {
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+
+    });
+</script>
+
+</body>
+</html>

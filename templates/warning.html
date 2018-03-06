@@ -13,6 +13,7 @@
     <script src="../static/js/html5.min.js"></script>
     <script src="../static/js/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 </head>
 <body class="body_bg">
@@ -42,31 +43,52 @@
                 <div class="well">
                     <h4>告警统计</h4>
                     <div class="well_content">
-                        <div class="search">
-                            <input type="text" name="title" placeholder="输入观测站名称或编号" autocomplete="off" class="layui-input">
-                            <button type="btn" class="iconfont icon-fangdajing"></button>
+                        <div class="date_select">
+                            <span class="layui-badge-rim" onclick="dateRangeSelect(this)">今日告警</span>
+                            <span class="layui-badge-rim" onclick="dateRangeSelect(this)">近两日告警</span>
+                            <span class="layui-badge-rim" onclick="dateRangeSelect(this)">近一周告警</span>
+                            <span class="layui-badge-rim active" onclick="dateRangeSelect(this)">所有告警</span>
                         </div>
-                        <span class="common_light_spot common_bg_green light_effect" title="运行中">
-                            <b class="common_bg_green"></b>
-                        </span>
+                        <div class="sqa_count common_color_red font_12">
+                            <span class="common_light_spot common_bg_red light_effect" title="运行中">
+                                <b class="common_bg_red"></b>
+                            </span>严重告警
+                            <span class="num text_ellipsis">12</span>
+                        </div>
+                        <div class="sqa_count common_color_orange font_12">
+                            <span class="common_light_spot common_bg_orange light_effect" title="运行中">
+                                <b class="common_bg_orange"></b>
+                            </span>一般告警
+                            <span class="num text_ellipsis">46</span>
+                        </div>
+                        <div class="sqa_count common_color_green font_12">
+                            <span class="common_light_spot common_bg_green light_effect" title="运行中">
+                                <b class="common_bg_green"></b>
+                            </span>消息提醒
+                            <span class="num text_ellipsis">120</span>
+                        </div>
+                        <div class="sqa_count common_color_blue font_12">
+                            <span class="common_light_spot common_bg_blue light_effect" title="运行中">
+                                <b class="common_bg_blue"></b>
+                            </span>告警总数
+                            <span class="num text_ellipsis">500</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="main_right">
                 <div class="main_right_wrap">
                     <!-- 告警列表 -->
-                    <div class="well">
+                    <div class="well warning_list">
                         <h4>告警列表
                             <span class="tip">（正在显示第&nbsp;<span>50-60</span>&nbsp;条，共&nbsp;<span>487</span>&nbsp;条）</span>
+                            <div class="layui-input-inline">
+                                <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-method="popWin" data-type="config" id="warningConfigModal">告警配置</button>
+                            </div>
                         </h4>
                         <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
                             <colgroup>
-                                <col width="60">
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
+                                <col width="100">
                                 <col>
                                 <col>
                                 <col>
@@ -74,125 +96,56 @@
                                 <col>
                             </colgroup>
                             <thead>
-                            <tr>
-                                <th>统计<br />时间</th>
-                                <th>中小客<br />流量/平均速度</th>
-                                <th>大客车<br />流量/平均速度</th>
-                                <th>小货车<br />流量/平均速度</th>
-                                <th>中货车<br />流量/平均速度</th>
-                                <th>大货车<br />流量/平均速度</th>
-                                <th>特大货<br />流量/平均速度</th>
-                                <th>集装箱<br />流量/平均速度</th>
-                                <th>拖拉机<br />流量/平均速度</th>
-                                <th>摩托车<br />流量/平均速度</th>
-                                <th>小时数</th>
-                            </tr>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>告警级别</th>
+                                    <th>告警内容</th>
+                                    <th>处理状态</th>
+                                    <th>告警时间</th>
+                                    <th>操作</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
-                            <tr>
-                                <td>0:05</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td>1234/58</td>
-                                <td class="layui-text"><a href="">查看小时数据</a></td>
-                            </tr>
+                                <tr class="text_red">
+                                    <td>01</td>
+                                    <td>严重</td>
+                                    <td>控制异常关闭</td>
+                                    <td>待处理</td>
+                                    <td>2018-01-25&nbsp;12:00:00</td>
+                                    <td class="layui-text"><a href="">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                </tr>
+                                <tr class="text_orange">
+                                    <td>02</td>
+                                    <td>一般</td>
+                                    <td>控制异常关闭</td>
+                                    <td>待处理</td>
+                                    <td>2018-01-25&nbsp;12:00:00</td>
+                                    <td class="layui-text"><a href="">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                </tr>
+                                <tr class="text_green">
+                                    <td>03</td>
+                                    <td>提醒</td>
+                                    <td>控制异常关闭</td>
+                                    <td>——</td>
+                                    <td>2018-01-25&nbsp;12:00:00</td>
+                                    <td>——</td>
+                                </tr>
+                                <tr class="text_orange">
+                                    <td>04</td>
+                                    <td>一般</td>
+                                    <td>控制异常关闭</td>
+                                    <td>已确认</td>
+                                    <td>2018-01-25&nbsp;12:00:00</td>
+                                    <td class="layui-text"><a href="">处理</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                </tr>
+                                <tr>
+                                    <td>05</td>
+                                    <td>一般</td>
+                                    <td>控制异常关闭</td>
+                                    <td>已处理</td>
+                                    <td>2018-01-25&nbsp;12:00:00</td>
+                                    <td class="layui-text">——</td>
+                                </tr>
                             </tbody>
                         </table>
                         <div id="page" class="text_center layui-table-page"></div>
@@ -205,24 +158,91 @@
     <div class="layui-footer" id="footer"></div>
 </div>
 
+<!-- 告警配置 -->
+<div id="warningConfig" style="display:none;">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label">设备掉线</label>
+            <div class="layui-input-inline">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入设备识别码"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-left: 40px;">
+            <label class="layui-form-label" style="color:#a5a5a5;">设备型号</label>
+            <div class="layui-input-inline" style="width:200px;">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入设备型号"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-left: 40px;">
+            <label class="layui-form-label" style="color:#a5a5a5;">观测站编号</label>
+            <div class="layui-input-inline" style="width:200px;">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站编号"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-left: 40px;">
+            <label class="layui-form-label" style="color:#a5a5a5;">观测站名称</label>
+            <div class="layui-input-inline" style="width:200px;">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-left: 40px;">
+            <label class="layui-form-label" style="color:#a5a5a5;">观测类型</label>
+            <div class="layui-input-inline" style="width:150px;">
+                <select name="interest" lay-filter="aihao">
+                    <option value="1">断面|上行|下行</option>
+                    <option value="2">断面|上行|下行</option>
+                    <option value="3">断面|上行|下行</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['laypage', 'element', 'form', 'laydate'], function(){
+    layui.use(['laypage', 'element', 'form', 'layer'], function(){
         var laypage = layui.laypage
             ,element = layui.element
-            ,laydate = layui.laydate;
+            ,form = layui.form
+            ,layer = layui.layer;
 
         laypage.render({
             elem: 'page'
             ,count: 10 //数据总数，从服务端得到
             ,theme: '#1E9FFF' //自定义选中色值
         });
-        laydate.render({
-            elem: '#date'
-            ,theme: 'blue',
+        //触发事件
+        $("#warningConfigModal").click(function(){
+            var type = $(this).data("type");
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , id: 'layerModal' + type //防止重复弹出
+                , title: ["告警配置"]
+                , area: '600px'
+                , id: 'layerModal' + type //防止重复弹出
+                , content: $("#warningConfig").html()
+                , yes: function () {
+                    layer.closeAll();
+                }
+            });
+            form.render();
         });
     });
+
+    function dateRangeSelect(obj) { //选择筛选的日期范围
+        $(obj).addClass("active").siblings().removeClass("active");
+    }
+
 </script>
 </body>
 </html>

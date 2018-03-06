@@ -312,16 +312,12 @@ body {
   transform: scale(2);
   -ms-transform: scale(2);
   /* IE 9 */
-
   -moz-transform: scale(2);
   /* Firefox */
-
   -webkit-transform: scale(2);
   /* Safari 和 Chrome */
-
   -o-transform: scale(2);
   /* Opera */
-
   opacity: .2;
   filter: alpha(opacity=20);
 }
@@ -430,4 +426,39 @@ body {
   100% {
     box-shadow: 0 0 1px;
   }
+}
+/* 背景色自定义 */
+.common_bg_red {
+  background: #fe0000;
+}
+.common_bg_orange {
+  background: #fc9802;
+}
+.common_bg_green {
+  background: #016502;
+}
+.common_bg_blue {
+  background: #2aabe4;
+}
+/* 字体颜色自定义 */
+.common_color_red {
+  color: #fe0000;
+}
+.common_color_orange {
+  color: #fc9802;
+}
+.common_color_green {
+  color: #016502;
+}
+.common_color_blue {
+  color: #2aabe4;
+}
+/* 弹框自定义 */
+.layui-layer.layui-layer-darkblue {
+  border-radius: 5px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-title {
+  background: #021535;
+  color: #fff;
+  border-top-left-radius: 4px;
 }

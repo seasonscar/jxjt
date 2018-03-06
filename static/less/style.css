@@ -1,3 +1,4 @@
+/* 登录 */
 #login {
   position: absolute;
   top: 50%;
@@ -25,11 +26,11 @@
   background: #021535;
   height: 600px;
 }
-#login .content .layui-container {
+#login .content .layui-main {
   height: 100%;
   background: url(../img/login_bg.png) center left no-repeat;
 }
-#login .content .layui-container .login_form {
+#login .content .layui-main .login_form {
   width: 300px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.8) !important;
@@ -39,16 +40,16 @@
   right: 0;
   top: 145px;
 }
-#login .content .layui-container .login_form h3 {
+#login .content .layui-main .login_form h3 {
   padding-bottom: 15px;
 }
-#login .content .layui-container .login_form .layui-form-item button.log_on {
+#login .content .layui-main .login_form .layui-form-item button.log_on {
   width: 100%;
 }
-#login .content .layui-container .login_form .layui-text {
+#login .content .layui-main .login_form .layui-text {
   text-align: right;
 }
-#login .content .layui-container .login_form .layui-text a {
+#login .content .layui-main .login_form .layui-text a {
   color: #1E9FFF;
 }
 #login .footer {
@@ -56,6 +57,152 @@
   padding-bottom: 15px;
   text-align: center;
   color: #999;
+}
+/* 首页 */
+#home .layui-body .layui-main .well .grid > h5.title_sm {
+  padding-bottom: 10px;
+}
+#home .layui-body .layui-main .well .grid > h5.title_sm span.sqa_sm {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #666;
+  margin-right: 5px;
+}
+#home .layui-body .layui-main .well .grid .sqa_count {
+  padding: 10px;
+  border-radius: 4px;
+}
+#home .layui-body .layui-main .well .grid .sqa_count.blue {
+  background: #cee9f4;
+  color: #29aae1;
+}
+#home .layui-body .layui-main .well .grid .sqa_count.orange {
+  background: #f9e4c7;
+  color: #ff9900;
+}
+#home .layui-body .layui-main .well .grid .sqa_count.gray {
+  background: #dadada;
+  color: #666;
+}
+#home .layui-body .layui-main .well .grid .sqa_count.red {
+  background: #ecced0;
+  color: #c2272b;
+}
+#home .layui-body .layui-main .well .grid .sqa_count .title {
+  text-align: center;
+  float: left;
+}
+#home .layui-body .layui-main .well .grid .sqa_count .title > span {
+  display: block;
+}
+#home .layui-body .layui-main .well .grid .sqa_count .title > span.iconfont {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+#home .layui-body .layui-main .well .grid .sqa_count .num {
+  margin-left: 60px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 7px;
+  text-align: right;
+}
+/* 设备页面 */
+#device .layui-body .layui-main .main_left .search {
+  margin-bottom: 10px;
+}
+#device .layui-body .layui-main .main_left .station_list {
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  max-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#device .layui-body .layui-main .main_left .station_list li {
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#device .layui-body .layui-main .main_left .station_list li a {
+  font-size: 12px;
+  color: #666;
+}
+#device .layui-body .layui-main .main_left .station_list li a:hover {
+  color: #1E9FFF;
+}
+#device .layui-body .layui-main .main_right .main_right_wrap .dev_info .map {
+  float: left;
+}
+#device .layui-body .layui-main .main_right .main_right_wrap .dev_info .info {
+  margin-left: 260px;
+  margin-right: 250px;
+  font-size: 12px;
+  line-height: 2.5;
+}
+#device .layui-body .layui-main .main_right .main_right_wrap .dev_info .info .layui-inline {
+  width: 40%;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+#device .layui-body .layui-main .main_right .main_right_wrap .dev_info .info .layui-inline:first-child {
+  width: 60%;
+}
+#device .layui-body .layui-main .main_right .main_right_wrap .dev_info .radar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 240px;
+  height: 150px;
+}
+/* 流量页面 */
+#flow .layui-body .layui-main .main_left .search {
+  margin-bottom: 10px;
+}
+#flow .layui-body .layui-main .main_left .station_list {
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  max-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#flow .layui-body .layui-main .main_left .station_list li {
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#flow .layui-body .layui-main .main_left .station_list li a {
+  font-size: 12px;
+  color: #666;
+}
+#flow .layui-body .layui-main .main_left .station_list li a:hover {
+  color: #1E9FFF;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count > h4 .layui-input-inline .layui-form-item > .layui-inline > .layui-form-label {
+  width: 45px;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count > h4 .layui-input-inline .layui-form-item > .layui-inline > .layui-input-inline {
+  width: 100px;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info {
+  margin-left: 260px;
+  margin-right: 250px;
+  font-size: 12px;
+  line-height: 2.5;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info .layui-inline {
+  width: 40%;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info .layui-inline:first-child {
+  width: 60%;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .radar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 240px;
+  height: 150px;
 }
 @media screen and (max-height: 710px) {
   #login {

@@ -154,6 +154,56 @@
   width: 240px;
   height: 150px;
 }
+/* 流量页面 */
+#flow .layui-body .layui-main .main_left .search {
+  margin-bottom: 10px;
+}
+#flow .layui-body .layui-main .main_left .station_list {
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  max-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#flow .layui-body .layui-main .main_left .station_list li {
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+#flow .layui-body .layui-main .main_left .station_list li a {
+  font-size: 12px;
+  color: #666;
+}
+#flow .layui-body .layui-main .main_left .station_list li a:hover {
+  color: #1E9FFF;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count > h4 .layui-input-inline .layui-form-item > .layui-inline > .layui-form-label {
+  width: 45px;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count > h4 .layui-input-inline .layui-form-item > .layui-inline > .layui-input-inline {
+  width: 100px;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info {
+  margin-left: 260px;
+  margin-right: 250px;
+  font-size: 12px;
+  line-height: 2.5;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info .layui-inline {
+  width: 40%;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .info .layui-inline:first-child {
+  width: 60%;
+}
+#flow .layui-body .layui-main .main_right .main_right_wrap .month_count .radar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 240px;
+  height: 150px;
+}
 @media screen and (max-height: 710px) {
   #login {
     top: 0;

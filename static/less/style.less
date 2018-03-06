@@ -183,6 +183,79 @@
   }
 }
 
+/* 流量页面 */
+#flow {
+  .layui-body {
+    .layui-main {
+      .main_left {
+        .search {
+          margin-bottom:10px;
+        }
+        .station_list {
+          border:1px solid #e6e6e6;
+          border-bottom:none;
+          max-height:800px;
+          overflow-x:hidden;
+          overflow-y:auto;
+          li {
+            padding:10px;
+            border-bottom:1px solid #e6e6e6;
+            a {
+              font-size:12px;
+              color:#666;
+              &:hover {
+                color:#1E9FFF;
+              }
+            }
+          }
+        }
+      }
+      .main_right {
+        .main_right_wrap {
+          .month_count {
+            > h4 {
+              .layui-input-inline {
+                .layui-form-item {
+                  > .layui-inline {
+                    > .layui-form-label {
+                      width:45px;
+                    }
+                    > .layui-input-inline {
+                      width:100px;
+                    }
+                  }
+                }
+              }
+            }
+            .info {
+              margin-left: 260px;
+              margin-right: 250px;
+              font-size: 12px;
+              line-height: 2.5;
+              .layui-inline {
+                width:40%;
+                padding-left:5px;
+                padding-right:5px;
+                float:left;
+                &:first-child {
+                  width:60%;
+                }
+              }
+            }
+            .radar {
+              position:absolute;
+              right:10px;
+              top:10px;
+              width:240px;
+              height:150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-height: 710px) {
   #login {
     top:0;

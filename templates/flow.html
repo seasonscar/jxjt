@@ -26,8 +26,8 @@
             <ul class="layui-nav" lay-filter="">
                 <li class="layui-nav-item"><a href=""><i class="iconfont icon-shouye"></i>首页</a></li>
                 <li class="layui-nav-item"><a href=""><i class="iconfont icon-dituzhaofang"></i>地图</a></li>
-                <li class="layui-nav-item layui-this"><a href=""><i class="iconfont icon-icon-"></i>设备</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-liuliang"></i>流量</a></li>
+                <li class="layui-nav-item"><a href=""><i class="iconfont icon-icon-"></i>设备</a></li>
+                <li class="layui-nav-item layui-this"><a href=""><i class="iconfont icon-liuliang"></i>流量</a></li>
                 <li class="layui-nav-item"><a href=""><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
                 <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
                 <li class="layui-nav-item nav_logout"><a href=""><i class="iconfont icon-tuichu4"></i></a></li>
@@ -245,7 +245,6 @@
     //一般直接写在一个js文件中
     layui.use(['laypage', 'element', 'form', 'laydate'], function(){
         var laypage = layui.laypage
-            ,element = layui.element
             ,laydate = layui.laydate;
 
         laypage.render({
@@ -350,6 +349,9 @@
     ;
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
+    }
+    window.onresize = function() {
+        myChart.resize();
     }
 </script>
 </body>

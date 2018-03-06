@@ -13,6 +13,33 @@ button {
 body {
   font-family: "Microsoft YaHei";
 }
+/* 浏览器滚动条自定义 */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #ccc;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* 宽度自定义 */
+.wrap_all {
+  min-width: 1280px;
+}
+/* body背景色自定义 */
+.body_bg {
+  background: #eaedf2;
+}
+/* 单行超出省略 */
+.text_ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 布局自定义 */
 .layui-layout-admin .layui-main {
   max-width: 1366px;
   margin: 0 auto;
@@ -40,17 +67,7 @@ body {
   min-height: 100%;
   padding: 20px;
 }
-.wrap_all {
-  min-width: 1280px;
-}
-.body_bg {
-  background: #eaedf2;
-}
-.text_ellipsis {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+/* 菜单 */
 #header {
   background: #021535;
 }
@@ -106,6 +123,7 @@ body {
 #header .layui-main .layui-nav .layui-nav-bar {
   background: #f7941f;
 }
+/* 页脚 */
 #footer {
   background: #021535;
   text-align: center;

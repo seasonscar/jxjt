@@ -139,7 +139,7 @@
                             <input type="text" name="title" placeholder="输入要搜索的观测站名称或编号" autocomplete="off" class="layui-input">
                             <button type="button" class="iconfont iconfont icon-fangdajing"></button>
                         </div>
-                        <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs">添加设备</button>
+                        <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-type="add" id="addDevModalBtn">添加设备</button>
                     </div>
                 </h4>
                 <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
@@ -291,17 +291,84 @@
     <div class="layui-footer" id="footer"></div>
 </div>
 
+<!-- 告警配置 -->
+<div id="ddDevModalModal" style="display:none;">
+    <form class="layui-form font_12" action="">
+        <div class="modal_body">
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备识别码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入识别码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备型号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入型号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站类型</label>
+                <div class="layui-input-inline">
+                    <select name="level" lay-verify="required">
+                        <option value="">请选择类型</option>
+                        <option value="1">断面</option>
+                        <option value="2">上行</option>
+                        <option value="3">下行</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">重置</button>
+            <button lay-submit class="layui-btn layui-btn-sm layui-btn-normal">确定</button>
+        </div>
+    </form>
+</div>
+
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['laypage', 'element'], function(){
-        var laypage = layui.laypage;
+    layui.use(['jquery', 'laypage', 'element', 'form', 'layer'], function(){
+        var $ = layui.$ //重点处
+            ,laypage = layui.laypage
+            ,form = layui.form
+            ,layer = layui.layer;
+
 
         laypage.render({
             elem: 'page'
             ,count: 10 //数据总数，从服务端得到
             ,theme: '#1E9FFF' //自定义选中色值
         });
+
+        //添加设备弹框触发事件
+        $("#addDevModalBtn").click(function(){
+            var type = $(this).data("type");
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , id: 'layerModal' + type //防止重复弹出
+                , title: ["添加设备"]
+                , area: ['400px', 'no']
+                , id: 'layerModal' + type //防止重复弹出
+                , content: $("#ddDevModalModal").html()
+            });
+            form.render();
+        });
+
     });
 </script>
 </body>

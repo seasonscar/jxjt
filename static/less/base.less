@@ -499,8 +499,42 @@ body {
     .layui-layer-title {
       background:#021535;
       color:#fff;
-      border-top-left-radius: 4px;
-      border-top-left-radius: 4px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
     }
+    .layui-layer-ico {
+      background:url(../img/ic_close.png) center center no-repeat;
+    }
+    .layui-layer-content {
+      height:auto !important;
+      overflow:visible;
+      .modal_body {
+        padding:20px 20px 5px 20px;
+        .layui-form-item {
+          .layui-form-label {
+            width:120px;
+          }
+        }
+      }
+      .modal_footer {
+        padding:10px 20px;
+        background:#021535;
+        text-align:center;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        .layui-btn {
+          border-radius: 20px;
+          padding: 0px 20px;
+          line-height: 28px;
+          &.layui-btn-primary {
+            &:hover {
+              border-color:#C9C9C9;
+            }
+          }
+        }
+      }
+    }
+
   }
 }

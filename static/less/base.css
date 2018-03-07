@@ -431,3 +431,67 @@ body {
     box-shadow: 0 0 1px;
   }
 }
+/* 背景色自定义 */
+.common_bg_red {
+  background: #fe0000;
+}
+.common_bg_orange {
+  background: #fc9802;
+}
+.common_bg_green {
+  background: #016502;
+}
+.common_bg_blue {
+  background: #2aabe4;
+}
+/* 字体颜色自定义 */
+.common_color_red {
+  color: #fe0000;
+}
+.common_color_orange {
+  color: #fc9802;
+}
+.common_color_green {
+  color: #016502;
+}
+.common_color_blue {
+  color: #2aabe4;
+}
+/* 弹框自定义 */
+.layui-layer.layui-layer-darkblue {
+  border-radius: 5px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-title {
+  background: #021535;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-ico {
+  background: url(../img/ic_close.png) center center no-repeat;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content {
+  height: auto !important;
+  overflow: visible;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content .modal_body {
+  padding: 20px 20px 5px 20px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content .modal_body .layui-form-item .layui-form-label {
+  width: 120px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content .modal_footer {
+  padding: 10px 20px;
+  background: #021535;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content .modal_footer .layui-btn {
+  border-radius: 20px;
+  padding: 0px 20px;
+  line-height: 28px;
+}
+.layui-layer.layui-layer-darkblue .layui-layer-content .modal_footer .layui-btn.layui-btn-primary:hover {
+  border-color: #C9C9C9;
+}

@@ -83,7 +83,7 @@
                         <h4>告警列表
                             <span class="tip">（正在显示第&nbsp;<span>50-60</span>&nbsp;条，共&nbsp;<span>487</span>&nbsp;条）</span>
                             <div class="layui-input-inline">
-                                <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-method="popWin" data-type="config" id="warningConfigModal">告警配置</button>
+                                <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-type="config" id="configModalBtn">告警配置</button>
                             </div>
                         </h4>
                         <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
@@ -159,49 +159,113 @@
 </div>
 
 <!-- 告警配置 -->
-<div id="warningConfig" style="display:none;">
-    <form class="layui-form" action="">
-        <div class="layui-form-item">
-            <label class="layui-form-label">设备掉线</label>
-            <div class="layui-input-inline">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入设备识别码"
-                       autocomplete="off" class="layui-input">
+<div id="configModal" style="display:none;">
+    <form class="layui-form font_12" action="">
+        <div class="modal_body">
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备掉线</label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">严重程度</option>
+                        <option value="1">严重</option>
+                        <option value="2">一般</option>
+                        <option value="3">提醒</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备上线</label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">严重程度</option>
+                        <option value="1">严重</option>
+                        <option value="2">一般</option>
+                        <option value="3">提醒</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">未知设备注册</label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">严重程度</option>
+                        <option value="1">严重</option>
+                        <option value="2">一般</option>
+                        <option value="3">提醒</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">数据未上报</label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">严重程度</option>
+                        <option value="1">严重</option>
+                        <option value="2">一般</option>
+                        <option value="3">提醒</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"></label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">超时时间</option>
+                        <option value="1">60</option>
+                    </select>
+                </div>
+                <div class="layui-form-mid layui-word-aux">分钟</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">数据上报错误</label>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">是否告警</option>
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select lay-verify="required">
+                        <option value="">严重程度</option>
+                        <option value="1">严重</option>
+                        <option value="2">一般</option>
+                        <option value="3">提醒</option>
+                    </select>
+                </div>
             </div>
         </div>
-
-        <div class="layui-form-item" style="margin-left: 40px;">
-            <label class="layui-form-label" style="color:#a5a5a5;">设备型号</label>
-            <div class="layui-input-inline" style="width:200px;">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入设备型号"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item" style="margin-left: 40px;">
-            <label class="layui-form-label" style="color:#a5a5a5;">观测站编号</label>
-            <div class="layui-input-inline" style="width:200px;">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站编号"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item" style="margin-left: 40px;">
-            <label class="layui-form-label" style="color:#a5a5a5;">观测站名称</label>
-            <div class="layui-input-inline" style="width:200px;">
-                <input type="text" name="title" required lay-verify="required" placeholder="请输入观测站名称"
-                       autocomplete="off" class="layui-input">
-            </div>
-        </div>
-
-        <div class="layui-form-item" style="margin-left: 40px;">
-            <label class="layui-form-label" style="color:#a5a5a5;">观测类型</label>
-            <div class="layui-input-inline" style="width:150px;">
-                <select name="interest" lay-filter="aihao">
-                    <option value="1">断面|上行|下行</option>
-                    <option value="2">断面|上行|下行</option>
-                    <option value="3">断面|上行|下行</option>
-                </select>
-            </div>
+        <div class="modal_footer">
+            <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">重置</button>
+            <button lay-submit class="layui-btn layui-btn-sm layui-btn-normal">确定</button>
         </div>
     </form>
 </div>
@@ -220,20 +284,17 @@
             ,count: 10 //数据总数，从服务端得到
             ,theme: '#1E9FFF' //自定义选中色值
         });
-        //触发事件
-        $("#warningConfigModal").click(function(){
+        //告警配置弹框触发事件
+        $("#configModalBtn").click(function(){
             var type = $(this).data("type");
             layer.open({
                 type: 1
                 , skin: 'layui-layer-darkblue' //样式类名
                 , id: 'layerModal' + type //防止重复弹出
                 , title: ["告警配置"]
-                , area: '600px'
+                , area: ['600px', 'no']
                 , id: 'layerModal' + type //防止重复弹出
-                , content: $("#warningConfig").html()
-                , yes: function () {
-                    layer.closeAll();
-                }
+                , content: $("#configModal").html()
             });
             form.render();
         });

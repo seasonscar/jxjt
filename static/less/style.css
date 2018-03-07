@@ -204,6 +204,61 @@
   width: 240px;
   height: 150px;
 }
+/* 告警页面 */
+#warning .main_left .well_content .date_select span.layui-badge-rim {
+  height: 24px;
+  line-height: 22px;
+  width: 48%;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#warning .main_left .well_content .date_select span.layui-badge-rim.active {
+  background: #f8931f;
+  color: #fff;
+  border-color: #fa921f;
+}
+#warning .main_left .well_content .sqa_count {
+  height: 68px;
+  line-height: 48px;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 10px;
+}
+#warning .main_left .well_content .sqa_count .common_light_spot {
+  margin-right: 10px;
+}
+#warning .main_left .well_content .sqa_count span.num {
+  display: block;
+  float: right;
+  max-width: 80px;
+  font-size: 18px;
+}
+#warning .main_left .well_content .sqa_count.common_color_red {
+  background: #f2d4d4;
+}
+#warning .main_left .well_content .sqa_count.common_color_orange {
+  background: #fde9d1;
+}
+#warning .main_left .well_content .sqa_count.common_color_green {
+  background: #cde0cc;
+}
+#warning .main_left .well_content .sqa_count.common_color_blue {
+  background: #d4effa;
+}
+#warning .warning_list .layui-table tbody tr.text_red {
+  color: #fe0000;
+}
+#warning .warning_list .layui-table tbody tr.text_orange {
+  color: #fc9802;
+}
+#warning .warning_list .layui-table tbody tr.text_green {
+  color: #016502;
+}
+#warning .warning_list .layui-table tbody tr td:first-child {
+  color: #666;
+}
 @media screen and (max-height: 710px) {
   #login {
     top: 0;

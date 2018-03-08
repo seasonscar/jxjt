@@ -40,12 +40,12 @@
         <img src="http://t.cn/RCzsdCq" />
     </div>
     <ul class="layui-nav layui-nav-tree" lay-filter="test">
-        <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-        <li class="layui-nav-item"><a href="">设备</a></li>
+        <li class="layui-nav-item layui-this"><a href="home.html">首页</a></li>
+        <li class="layui-nav-item"><a href="device.html">设备</a></li>
         <li class="layui-nav-item"><a href="">站点</a></li>
-        <li class="layui-nav-item"><a href="">流量</a></li>
-        <li class="layui-nav-item"><a href="">告警</a></li>
-        <li class="layui-nav-item"><a href="">退出</a></li>
+        <li class="layui-nav-item"><a href="flow.html">流量</a></li>
+        <li class="layui-nav-item"><a href="warning.html">告警</a></li>
+        <li class="layui-nav-item"><a href="login.html">退出</a></li>
     </ul>
 </div>
 <div class="side_bar_count">
@@ -150,6 +150,7 @@
             {
                 text: '江西省交通流量调查管理平台',
                 x:'center',
+                top: '20',
                 textStyle: {
                     fontSize :30,
                     color: '#99a1ae'
@@ -158,9 +159,9 @@
         ],
         geo: {
             map: 'china',
-            left: '10',
+            left: '0',
             right: '0',
-            center: [117.98561551896913, 31.205000490896193],
+            //center: [117.98561551896913, 31.205000490896193],
             zoom: 1,
             label: {
                 emphasis: {
@@ -171,7 +172,7 @@
             itemStyle: {
                 normal: {
                     areaColor: '#323c48',
-                    borderColor: '#111'
+                    borderColor: '#111',
                 },
                 emphasis: {
                     areaColor: '#2a333d'

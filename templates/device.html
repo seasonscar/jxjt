@@ -50,13 +50,13 @@
         <div class="layui-main">
             <a href="" class="logo"></a>
             <ul class="layui-nav" lay-filter="">
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-shouye"></i>首页</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-dituzhaofang"></i>地图</a></li>
-                <li class="layui-nav-item layui-this"><a href=""><i class="iconfont icon-icon-"></i>设备</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-liuliang"></i>流量</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
+                <li class="layui-nav-item"><a href="home.html"><i class="iconfont icon-shouye"></i>首页</a></li>
+                <li class="layui-nav-item"><a href="map.html"><i class="iconfont icon-dituzhaofang"></i>地图</a></li>
+                <li class="layui-nav-item layui-this"><a href="device.html"><i class="iconfont icon-icon-"></i>设备</a></li>
+                <li class="layui-nav-item"><a href="flow.html"><i class="iconfont icon-liuliang"></i>流量</a></li>
+                <li class="layui-nav-item"><a href="warning.html"><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
                 <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
-                <li class="layui-nav-item nav_logout"><a href=""><i class="iconfont icon-tuichu4"></i></a></li>
+                <li class="layui-nav-item nav_logout"><a href="login.html"><i class="iconfont icon-tuichu4"></i></a></li>
             </ul>
         </div>
     </div>
@@ -69,10 +69,10 @@
                     <h4>观测站</h4>
                     <div class="well_content">
                         <div class="search">
-                            <input type="text" name="title" placeholder="输入观测站名称或编号" autocomplete="off" class="layui-input">
+                            <input type="text" name="title" placeholder="输入观测站名称或编号" autocomplete="off" class="layui-input" id="searchStation">
                             <button type="button" class="iconfont icon-fangdajing"></button>
                         </div>
-                        <ul class="station_list">
+                        <ul class="station_list" id="stationList">
                             <li><a href="">G105L101360721<br />赣县沙地</a></li>
                             <li><a href="">G105L101360721<br />赣县沙地</a></li>
                             <li><a href="">G105L101360721<br />赣县沙地</a></li>
@@ -120,8 +120,8 @@
                                         <div class="layui-inline">
                                             <label class="layui-form-label">观测日期</label>
                                             <div class="layui-input-inline">
-                                                <input type="text" name="date" id="date" placeholder="" autocomplete="off" class="layui-input">
-                                                <span class="iconfont icon-riqi" onclick="dateSelect()"></span>
+                                                <input type="text" name="date" id="date" placeholder="请选择一个日期" autocomplete="off" class="layui-input">
+                                                <span class="iconfont icon-riqi" id="dateIcon"></span>
                                             </div>
                                             <label class="layui-form-label">车道编号</label>
                                             <div class="layui-input-inline">
@@ -233,6 +233,7 @@
 
 <script src="../layui/layui.js"></script>
 <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/js/default.js"></script>
 <script>
     //一般直接写在一个js文件中
     layui.use(['laypage', 'element', 'form', 'laydate'], function(){
@@ -247,6 +248,10 @@
         laydate.render({
             elem: '#date'
             ,theme: 'blue',
+        });
+        $("#dateIcon").click(function(event){
+            event.stopPropagation();
+            $("#date").trigger("focus");
         });
     });
 
@@ -427,15 +432,18 @@
             }
         ]
     };
-    ;
+
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
+    $(function(){
+        $('#searchStation').bind('input propertychange', function() {   //观测站实时搜索
+            var text = $(this).val();
+            var list = $("#stationList");
+            searchText(text, list);
+        });
+    });
 
-    function dateSelect() {
-        console.log( $("#date"))
-        $("#date")[0].trigger("onclick");
-    }
 </script>
 </body>
 </html>

@@ -13,363 +13,303 @@
     <script src="../static/js/html5.min.js"></script>
     <script src="../static/js/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .tooltip{
+            background: url("../static/img/tooltip.png");
+            width:160px;
+            height:120px;
+            padding:0px 0px 0px 4px;
+            position: absolute;
+            top:0px;
+            background-size:100%;
+        }
+        .tips{
+            padding:25px 0px 0px 20px;
+        }
+        .tips span{
+            font-size: 15px;
+            line-height: 15px;
+            color:#8D8D8D;
+        }
+    </style>
 </head>
-<body class="body_bg">
+<body id="index">
 
-<!-- HTML代码 -->
-<div id="home" class="layui-layout layui-layout-admin wrap_all">
-    <!-- 菜单导航 -->
-    <div class="layui-header" id="header">
-        <div class="layui-main">
-            <a href="" class="logo"></a>
-            <ul class="layui-nav" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href=""><i class="iconfont icon-shouye"></i>首页</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-dituzhaofang"></i>地图</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-icon-"></i>设备</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-liuliang"></i>流量</a></li>
-                <li class="layui-nav-item"><a href=""><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
-                <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
-                <li class="layui-nav-item nav_logout"><a href=""><i class="iconfont icon-tuichu4"></i></a></li>
-            </ul>
+<div class="side_bar_menu" style="position:absolute;z-index:4;">
+    <div class="head_img">
+        <img src="http://t.cn/RCzsdCq" />
+    </div>
+    <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+        <li class="layui-nav-item"><a href="">设备</a></li>
+        <li class="layui-nav-item"><a href="">站点</a></li>
+        <li class="layui-nav-item"><a href="">流量</a></li>
+        <li class="layui-nav-item"><a href="">告警</a></li>
+        <li class="layui-nav-item"><a href="">退出</a></li>
+    </ul>
+</div>
+<div class="side_bar_count">
+    <div class="counts">
+        <div class="count">
+            <div class="num common_color_blue">400</div>
+            <div class="title"><span class="iconfont icon-all"></span>全部设备</div>
+        </div>
+        <div class="count">
+            <div class="num common_color_red">400</div>
+            <div class="title"><span class="iconfont icon-all"></span>告警设备</div>
+        </div>
+        <div class="count">
+            <div class="num">400</div>
+            <div class="title"><span class="iconfont icon-all"></span>离线设备</div>
         </div>
     </div>
-    <!-- 主内容 -->
-    <div class="layui-body wrap_all">
-        <div class="layui-main">
-            <!-- 统计设备 -->
-            <div class="well">
-                <h4>设备统计</h4>
-                <div class="layui-row layui-col-space30">
-                    <div class="layui-col-xs6">
-                        <!-- 统计设备 -->
-                        <div class="grid font_12">
-                            <h5 class="title_sm"><span class="sqa_sm"></span>设备统计</h5>
-                            <div class="layui-row layui-col-space10">
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count blue layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-all"></span>
-                                            <span>全部设备</span>
-                                        </div>
-                                        <div class="num text_ellipsis">400</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count orange layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-alarm-settings"></span>
-                                            <span>告警设备</span>
-                                        </div>
-                                        <div class="num text_ellipsis">10</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count gray layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-lixianbaobiao"></span>
-                                            <span>离线设备</span>
-                                        </div>
-                                        <div class="num text_ellipsis">2</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count red layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-gaojingxinxi"></span>
-                                            <span>异常设备</span>
-                                        </div>
-                                        <div class="num text_ellipsis">10</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="layui-col-xs6">
-                        <!-- 设备评估统计 -->
-                        <div class="grid font_12">
-                            <h5 class="title_sm"><span class="sqa_sm"></span>设备评估统计</h5>
-                            <div class="layui-row layui-col-space10">
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count blue layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-zhengchang"></span>
-                                            <span>正常运行</span>
-                                        </div>
-                                        <div class="num text_ellipsis">400</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count orange layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-buwanzhengxing"></span>
-                                            <span>完整率不足</span>
-                                        </div>
-                                        <div class="num text_ellipsis">10</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count gray layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-shijian"></span>
-                                            <span>及时率不足</span>
-                                        </div>
-                                        <div class="num text_ellipsis">2</div>
-                                    </div>
-                                </div>
-                                <div class="layui-col-xs3">
-                                    <div class="sqa_count red layui-clear">
-                                        <div class="title">
-                                            <span class="iconfont icon-gaojingxinxi"></span>
-                                            <span>异常率过高</span>
-                                        </div>
-                                        <div class="num text_ellipsis">10</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 设备列表 -->
-            <div class="well">
-                <h4>设备列表
-                    <span class="tip">（正在显示第&nbsp;<span>50-60</span>&nbsp;条，共&nbsp;<span>487</span>&nbsp;条）</span>
-                    <div class="layui-input-inline">
-                        <div class="search">
-                            <input type="text" name="title" placeholder="输入要搜索的观测站名称或编号" autocomplete="off" class="layui-input">
-                            <button type="button" class="iconfont iconfont icon-fangdajing"></button>
-                        </div>
-                        <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-type="add" id="addDevModalBtn">添加设备</button>
-                    </div>
-                </h4>
-                <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
-                    <colgroup>
-                        <col width="120">
-                        <col width="60">
-                        <col width="60">
-                        <col width="60">
-                        <col width="60">
-                        <col width="100">
-                        <col width="60">
-                        <col width="120">
-                        <col width="120">
-                        <col width="100">
-                        <col>
-                        <col width="60">
-                        <col width="100">
-                    </colgroup>
-                    <thead>
-                    <tr>
-                        <th>观测站</th>
-                        <th>方向</th>
-                        <th>完整率</th>
-                        <th>及时率</th>
-                        <th>异常率</th>
-                        <th>交通量<br />错误/总计</th>
-                        <th>时间<br />序号</th>
-                        <th>传输数量（条）<br />超前/及时/滞后</th>
-                        <th>时间偏差（分）<br />最大/最小/平均</th>
-                        <th>最后数据时间</th>
-                        <th>设备</th>
-                        <th>故障<br />代码</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                        <tr>
-                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
-                            <td>断面</td>
-                            <td><span class="layui-badge layui_bg_red">6%</span></td>
-                            <td><span class="layui-badge layui_bg_green">6%</span></td>
-                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
-                            <td>0/488</td>
-                            <td>122</td>
-                            <td>0/488/0</td>
-                            <td>360/1/8</td>
-                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
-                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
-                            <td>0</td>
-                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="page" class="text_center layui-table-page"></div>
-            </div>
-        </div>
-    </div>
-    <!-- 页脚 -->
-    <div class="layui-footer" id="footer"></div>
 </div>
 
-<!-- 添加设备 -->
-<div id="ddDevModalModal" style="display:none;">
-    <form class="layui-form font_12" action="">
-        <div class="modal_body">
-            <div class="layui-form-item">
-                <label class="layui-form-label">设备识别码</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" lay-verify="required" placeholder="请输入识别码" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">设备型号</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" lay-verify="required" placeholder="请输入型号" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">观测站编号</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">观测站名称</label>
-                <div class="layui-input-inline">
-                    <input type="text" name="title" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">观测站类型</label>
-                <div class="layui-input-inline">
-                    <select name="level" lay-verify="required">
-                        <option value="">请选择类型</option>
-                        <option value="1">断面</option>
-                        <option value="2">上行</option>
-                        <option value="3">下行</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="modal_footer">
-            <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">重置</button>
-            <button lay-submit class="layui-btn layui-btn-sm layui-btn-normal">确定</button>
-        </div>
-    </form>
-</div>
+<div id="container" style="height: 100%;position:absolute;top:0;left:0;right:0;bottom:0;"></div>
 
 <script src="../layui/layui.js"></script>
-<script>
+<script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=uHkkRqHOFj3Z6Ajv3lLhCD8WjYjb6rFM"></script>
+
+<script type="text/javascript">
     //一般直接写在一个js文件中
-    layui.use(['jquery', 'laypage', 'element', 'form', 'layer'], function(){
-        var $ = layui.$ //重点处
-            ,laypage = layui.laypage
-            ,form = layui.form
-            ,layer = layui.layer;
+    layui.use('element');
 
 
-        laypage.render({
-            elem: 'page'
-            ,count: 10 //数据总数，从服务端得到
-            ,theme: '#1E9FFF' //自定义选中色值
+
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+
+    var geoCoordMap = {
+        "南昌":[115.85,28.68],
+        "九江":[116.00,29.70],
+        "上饶":[117.94,28.45],
+        "抚州":[116.35,27.94],
+        "宜春":[114.41,27.81],
+        "吉安":[114.96,27.08],
+        "赣州":[114.93,25.83],
+        "景德镇":[117.17,29.26],
+        "萍乡":[113.85,27.62],
+        "新余":[114.91,27.81],
+        "鹰潭":[117.06,28.26]
+    };
+
+    var data = [
+        {name: "南昌",  value: 319,jsl:"1%",wzl:"1%",alarmInfo:""},
+        {name: "九江",  value: 212,jsl:"2%",wzl:"2%",alarmInfo:""},
+        {name: "上饶",  value: 112,jsl:"3%",wzl:"3%",alarmInfo:""},
+        {name: "抚州",  value: 112,jsl:"4%",wzl:"4%",alarmInfo:""},
+        {name: "宜春",  value: 314,jsl:"5%",wzl:"5%",alarmInfo:""},
+        {name: "吉安",  value: 115,jsl:"6%",wzl:"6%",alarmInfo:""},
+        {name: "赣州",  value: 116,jsl:"7%",wzl:"7%",alarmInfo:""},
+        {name: "景德镇",value: 418,jsl:"8%",wzl:"8%",alarmInfo:""},
+        {name: "萍乡",  value: 118,jsl:"9%",wzl:"9%",alarmInfo:""},
+        {name: "新余",  value: 319,jsl:"10%",wzl:"10%",alarmInfo:"无交通量上报"},
+        {name: "鹰潭",  value: 321,jsl:"11%",wzl:"11%",alarmInfo:"无交通量上报"}
+    ];
+    var normalData=[];
+    var alarmData=[];
+
+    convert(data);
+
+    function convert(data) {
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                if(data[i].alarmInfo!=''){
+                    alarmData.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value)
+                    });
+                }else{
+                    normalData.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value)
+                    });
+                }
+
+            }
+        }
+    }
+
+    option = {
+        backgroundColor: '#021535',
+        animation: true,
+        animationDuration: 1000,
+        animationEasing: 'cubicInOut',
+        animationDurationUpdate: 1000,
+        animationEasingUpdate: 'cubicInOut',
+        title: [
+            {
+                text: '江西省交通流量调查管理平台',
+                x:'center',
+                textStyle: {
+                    fontSize :30,
+                    color: '#99a1ae'
+                }
+            }
+        ],
+        geo: {
+            map: 'china',
+            left: '10',
+            right: '0',
+            center: [117.98561551896913, 31.205000490896193],
+            zoom: 1,
+            label: {
+                emphasis: {
+                    show: false
+                }
+            },
+            roam: true,
+            itemStyle: {
+                normal: {
+                    areaColor: '#323c48',
+                    borderColor: '#111'
+                },
+                emphasis: {
+                    areaColor: '#2a333d'
+                }
+            }
+        },
+        tooltip : {
+            trigger: 'item',
+            borderRadius: 0,
+            padding:[0,0,0,0],
+            formatter: function(params) {
+                var cityName= params.name;
+                var cityJsl;
+                var cityWzl;
+                var alarmInfo;
+                for(var i=0;i<data.length;i++){
+                    if(cityName==data[i].name){
+                        cityJsl=data[i].jsl;
+                        cityWzl=data[i].wzl;
+                        alarmInfo=data[i].alarmInfo;
+                    }
+                }
+                var html="<div class='tooltip'><div class='tips'><span style='color:#ffffff'>";
+                html+=params.name+"某站点</span><br><span>及时率:"+cityJsl+"</span><br><span>完整率:"+cityWzl+"</span><br><span>告警:"+alarmInfo+"</span></div>";
+                html+="</div>";
+                return html;
+            },
+            textStyle:{}
+        },
+        grid: {
+            right: 40,
+            top: 100,
+            bottom: 40,
+            width: '30%'
+        },
+        xAxis: {
+            type: 'value',
+            scale: true,
+            position: 'top',
+            boundaryGap: false,
+            splitLine: {show: false},
+            axisLine: {show: false},
+            axisTick: {show: false},
+            axisLabel: {margin: 2, textStyle: {color: '#aaa'}},
+        },
+        yAxis: {
+            type: 'category',
+            name: '',
+            nameGap: 16,
+            axisLine: {show: false, lineStyle: {color: '#ddd'}},
+            axisTick: {show: false, lineStyle: {color: '#ddd'}},
+            axisLabel: {interval: 0, textStyle: {color: '#ddd'}},
+            data: []
+        },
+        series : [
+            {
+                name: 'jxjt',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                data: normalData,
+                symbolSize: function (val) {
+                    return Math.max(val[2] / 10, 8);
+                },
+                showEffectOn: 'emphasis',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#f4e925',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            },
+
+            {
+                name: 'jxjt2',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                data: alarmData,
+                symbolSize: function (val) {
+                    return Math.max(val[2] / 10, 8);
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#f42130',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            }
+        ]
+    };
+
+
+
+
+    // myChart.setOption(option);
+
+    setTimeout(function () {
+        myChart.dispatchAction({
+            type: 'brush',
+            areas: [
+                {
+                    geoIndex: 0,
+                    brushType: 'polygon',
+                    coordRange: [[119.72,34.85],[119.68,34.85],[119.5,34.84],[119.19,34.77],[118.76,34.63],[118.6,34.6],[118.46,34.6],[118.33,34.57],[118.05,34.56],[117.6,34.56],[117.41,34.56],[117.25,34.56],[117.11,34.56],[117.02,34.56],[117,34.56],[116.94,34.56],[116.94,34.55],[116.9,34.5],[116.88,34.44],[116.88,34.37],[116.88,34.33],[116.88,34.24],[116.92,34.15],[116.98,34.09],[117.05,34.06],[117.19,33.96],[117.29,33.9],[117.43,33.8],[117.49,33.75],[117.54,33.68],[117.6,33.65],[117.62,33.61],[117.64,33.59],[117.68,33.58],[117.7,33.52],[117.74,33.5],[117.74,33.46],[117.8,33.44],[117.82,33.41],[117.86,33.37],[117.9,33.3],[117.9,33.28],[117.9,33.27],[118.09,32.97],[118.21,32.7],[118.29,32.56],[118.31,32.5],[118.35,32.46],[118.35,32.42],[118.35,32.36],[118.35,32.34],[118.37,32.24],[118.37,32.14],[118.37,32.09],[118.44,32.05],[118.46,32.01],[118.54,31.98],[118.6,31.93],[118.68,31.86],[118.72,31.8],[118.74,31.78],[118.76,31.74],[118.78,31.7],[118.82,31.64],[118.82,31.62],[118.86,31.58],[118.86,31.55],[118.88,31.54],[118.88,31.52],[118.9,31.51],[118.91,31.48],[118.93,31.43],[118.95,31.4],[118.97,31.39],[118.97,31.37],[118.97,31.34],[118.97,31.27],[118.97,31.21],[118.97,31.17],[118.97,31.12],[118.97,31.02],[118.97,30.93],[118.97,30.87],[118.97,30.85],[118.95,30.8],[118.95,30.77],[118.95,30.76],[118.93,30.7],[118.91,30.63],[118.91,30.61],[118.91,30.6],[118.9,30.6],[118.88,30.54],[118.88,30.51],[118.86,30.51],[118.86,30.46],[118.72,30.18],[118.68,30.1],[118.66,30.07],[118.62,29.91],[118.56,29.73],[118.52,29.63],[118.48,29.51],[118.44,29.42],[118.44,29.32],[118.43,29.19],[118.43,29.14],[118.43,29.08],[118.44,29.05],[118.46,29.05],[118.6,28.95],[118.64,28.94],[119.07,28.51],[119.25,28.41],[119.36,28.28],[119.46,28.19],[119.54,28.13],[119.66,28.03],[119.78,28],[119.87,27.94],[120.03,27.86],[120.17,27.79],[120.23,27.76],[120.3,27.72],[120.42,27.66],[120.52,27.64],[120.58,27.63],[120.64,27.63],[120.77,27.63],[120.89,27.61],[120.97,27.6],[121.07,27.59],[121.15,27.59],[121.28,27.59],[121.38,27.61],[121.56,27.73],[121.73,27.89],[122.03,28.2],[122.3,28.5],[122.46,28.72],[122.5,28.77],[122.54,28.82],[122.56,28.82],[122.58,28.85],[122.6,28.86],[122.61,28.91],[122.71,29.02],[122.73,29.08],[122.93,29.44],[122.99,29.54],[123.03,29.66],[123.05,29.73],[123.16,29.92],[123.24,30.02],[123.28,30.13],[123.32,30.29],[123.36,30.36],[123.36,30.55],[123.36,30.74],[123.36,31.05],[123.36,31.14],[123.36,31.26],[123.38,31.42],[123.46,31.74],[123.48,31.83],[123.48,31.95],[123.46,32.09],[123.34,32.25],[123.22,32.39],[123.12,32.46],[123.07,32.48],[123.05,32.49],[122.97,32.53],[122.91,32.59],[122.83,32.81],[122.77,32.87],[122.71,32.9],[122.56,32.97],[122.38,33.05],[122.3,33.12],[122.26,33.15],[122.22,33.21],[122.22,33.3],[122.22,33.39],[122.18,33.44],[122.07,33.56],[121.99,33.69],[121.89,33.78],[121.69,34.02],[121.66,34.05],[121.64,34.08]]
+                }
+            ]
         });
+    }, 0);
 
-        //添加设备弹框触发事件
-        $("#addDevModalBtn").click(function(){
-            var type = $(this).data("type");
-            layer.open({
-                type: 1
-                , skin: 'layui-layer-darkblue' //样式类名
-                , id: 'layerModal' + type //防止重复弹出
-                , title: ["添加设备"]
-                , area: ['400px', 'no']
-                , id: 'layerModal' + type //防止重复弹出
-                , content: $("#ddDevModalModal").html()
-            });
-            form.render();
-        });
-
-    });
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
 </script>
-</body>
+<body>
 </html>

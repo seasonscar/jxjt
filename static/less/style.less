@@ -328,6 +328,100 @@
   }
 }
 
+/* 首页-地图 */
+#index {
+  .side_bar_menu {
+    position: fixed;
+    z-index: 4;
+    background: rgba(2,21,53,0.6);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.8);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.8);
+    box-shadow: 0 0 10px rgba(0,0,0,.8);
+    top:10%;
+    left:0;
+    .head_img {
+      text-align: center;
+      padding: 15px 0;
+      > img {
+        width:32px;
+        height:32px;
+        border-radius:50%;
+      }
+    }
+    ul.layui-nav-tree {
+      width:auto;
+      background:none;
+      li.layui-nav-item {
+        a {
+          height: 50px;
+          line-height: 50px;
+          padding: 0 15px;
+          &:hover {
+            background:none;
+          }
+        }
+        &.layui-this {
+          background: none;
+          a {
+            color:#fff;
+            background-color: rgba(31, 41, 94, 0.6);
+            &:after {
+              content:'';
+              display:block;
+              width:5px;
+              position:absolute;
+              right:-5px;
+              top:0;
+              bottom:0;
+              background-color: #f7941f;
+            }
+          }
+        }
+      }
+      .layui-nav-bar {
+        background:#f7941f;
+        right: -5px;
+        left: auto;
+      }
+    }
+
+  }
+  .side_bar_count {
+    position:fixed;
+    right:0;
+    bottom:0;
+    top:0;
+    width:300px;
+    z-index:4;
+    background: rgba(0, 0, 0, 0.2);
+    .counts {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 50px;
+      margin-top: -175px;
+      .count {
+        color:#999;
+        padding-top:20px;
+        padding-bottom:20px;
+        .num {
+          font-size: 32px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid rgba(255,255,255,.5);
+        }
+        .title {
+          padding-top: 10px;
+          > span {
+            font-size: 12px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+  }
+
+}
 
 @media screen and (max-height: 710px) {
   #login {

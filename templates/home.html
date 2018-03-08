@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>江西省交通流量调查管理平台</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../static/font/iconfont.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="../static/js/html5.min.js"></script>
+    <script src="../static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="body_bg">
+
+<!-- HTML代码 -->
+<div id="home" class="layui-layout layui-layout-admin wrap_all">
+    <!-- 菜单导航 -->
+    <div class="layui-header" id="header">
+        <div class="layui-main">
+            <a href="" class="logo"></a>
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item layui-this"><a href=""><i class="iconfont icon-shouye"></i>首页</a></li>
+                <li class="layui-nav-item"><a href=""><i class="iconfont icon-dituzhaofang"></i>地图</a></li>
+                <li class="layui-nav-item"><a href=""><i class="iconfont icon-icon-"></i>设备</a></li>
+                <li class="layui-nav-item"><a href=""><i class="iconfont icon-liuliang"></i>流量</a></li>
+                <li class="layui-nav-item"><a href=""><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
+                <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
+                <li class="layui-nav-item nav_logout"><a href=""><i class="iconfont icon-tuichu4"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主内容 -->
+    <div class="layui-body wrap_all">
+        <div class="layui-main">
+            <!-- 统计设备 -->
+            <div class="well">
+                <h4>设备统计</h4>
+                <div class="layui-row layui-col-space30">
+                    <div class="layui-col-xs6">
+                        <!-- 统计设备 -->
+                        <div class="grid font_12">
+                            <h5 class="title_sm"><span class="sqa_sm"></span>设备统计</h5>
+                            <div class="layui-row layui-col-space10">
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count blue layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-all"></span>
+                                            <span>全部设备</span>
+                                        </div>
+                                        <div class="num text_ellipsis">400</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count orange layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-alarm-settings"></span>
+                                            <span>告警设备</span>
+                                        </div>
+                                        <div class="num text_ellipsis">10</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count gray layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-lixianbaobiao"></span>
+                                            <span>离线设备</span>
+                                        </div>
+                                        <div class="num text_ellipsis">2</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count red layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-gaojingxinxi"></span>
+                                            <span>异常设备</span>
+                                        </div>
+                                        <div class="num text_ellipsis">10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs6">
+                        <!-- 设备评估统计 -->
+                        <div class="grid font_12">
+                            <h5 class="title_sm"><span class="sqa_sm"></span>设备评估统计</h5>
+                            <div class="layui-row layui-col-space10">
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count blue layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-zhengchang"></span>
+                                            <span>正常运行</span>
+                                        </div>
+                                        <div class="num text_ellipsis">400</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count orange layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-buwanzhengxing"></span>
+                                            <span>完整率不足</span>
+                                        </div>
+                                        <div class="num text_ellipsis">10</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count gray layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-shijian"></span>
+                                            <span>及时率不足</span>
+                                        </div>
+                                        <div class="num text_ellipsis">2</div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3">
+                                    <div class="sqa_count red layui-clear">
+                                        <div class="title">
+                                            <span class="iconfont icon-gaojingxinxi"></span>
+                                            <span>异常率过高</span>
+                                        </div>
+                                        <div class="num text_ellipsis">10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 设备列表 -->
+            <div class="well">
+                <h4>设备列表
+                    <span class="tip">（正在显示第&nbsp;<span>50-60</span>&nbsp;条，共&nbsp;<span>487</span>&nbsp;条）</span>
+                    <div class="layui-input-inline">
+                        <div class="search">
+                            <input type="text" name="title" placeholder="输入要搜索的观测站名称或编号" autocomplete="off" class="layui-input">
+                            <button type="button" class="iconfont iconfont icon-fangdajing"></button>
+                        </div>
+                        <button class="layui-btn layui-btn-radius layui-btn-normal layui-btn-xs" data-type="add" id="addDevModalBtn">添加设备</button>
+                    </div>
+                </h4>
+                <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
+                    <colgroup>
+                        <col width="120">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="60">
+                        <col width="100">
+                        <col width="60">
+                        <col width="120">
+                        <col width="120">
+                        <col width="100">
+                        <col>
+                        <col width="60">
+                        <col width="100">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>观测站</th>
+                        <th>方向</th>
+                        <th>完整率</th>
+                        <th>及时率</th>
+                        <th>异常率</th>
+                        <th>交通量<br />错误/总计</th>
+                        <th>时间<br />序号</th>
+                        <th>传输数量（条）<br />超前/及时/滞后</th>
+                        <th>时间偏差（分）<br />最大/最小/平均</th>
+                        <th>最后数据时间</th>
+                        <th>设备</th>
+                        <th>故障<br />代码</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                        <tr>
+                            <td>赣县沙地<br /><span class="text_gray">G105L101360721</span></td>
+                            <td>断面</td>
+                            <td><span class="layui-badge layui_bg_red">6%</span></td>
+                            <td><span class="layui-badge layui_bg_green">6%</span></td>
+                            <td><span class="layui-badge layui_bg_gray">6%</span></td>
+                            <td>0/488</td>
+                            <td>122</td>
+                            <td>0/488/0</td>
+                            <td>360/1/8</td>
+                            <td><span class="text_gray">10:08:22.196</span><br />2018-01-19</td>
+                            <td class="layui-text"><a href="">0071154316060122</a><span class="text_gray">(YX-I-C)</span><br /><span class="text_gray">辽宁金洋科技发展集团有限公司</span></td>
+                            <td>0</td>
+                            <td class="layui-text"><a href="">删除</a>&nbsp;&nbsp;&nbsp;<a href="">编辑</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="page" class="text_center layui-table-page"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="layui-footer" id="footer"></div>
+</div>
+
+<!-- 添加设备 -->
+<div id="ddDevModalModal" style="display:none;">
+    <form class="layui-form font_12" action="">
+        <div class="modal_body">
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备识别码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入识别码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设备型号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入型号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">观测站类型</label>
+                <div class="layui-input-inline">
+                    <select name="level" lay-verify="required">
+                        <option value="">请选择类型</option>
+                        <option value="1">断面</option>
+                        <option value="2">上行</option>
+                        <option value="3">下行</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <button type="reset" class="layui-btn layui-btn-sm layui-btn-primary">重置</button>
+            <button lay-submit class="layui-btn layui-btn-sm layui-btn-normal">确定</button>
+        </div>
+    </form>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['element'], function(){
+        var element = layui.element;
+
+
+
+        //添加设备弹框触发事件
+        $("#addDevModalBtn").click(function(){
+            var type = $(this).data("type");
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , id: 'layerModal' + type //防止重复弹出
+                , title: ["添加设备"]
+                , area: ['400px', 'no']
+                , id: 'layerModal' + type //防止重复弹出
+                , fixed: false
+                , content: $("#ddDevModalModal").html()
+            });
+            form.render();
+        });
+
+    });
+</script>
+</body>
+</html>

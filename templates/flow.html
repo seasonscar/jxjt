@@ -13,7 +13,6 @@
     <script src="../static/js/html5.min.js"></script>
     <script src="../static/js/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 </head>
 <body class="body_bg">
 
@@ -244,22 +243,22 @@
 <div id="hourDataModal" style="display:none;">
     <form class="layui-form font_12" action="">
         <div class="modal_body">
-            <div id="line" style="height: 150px;"></div>
-            <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
-                <colgroup>
-                    <col width="60">
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                    <col>
-                </colgroup>
-                <thead>
+            <div class="line" style="height: 200px;"></div>
+            <div class="table_body_scroll">
+                <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
+                    <colgroup>
+                        <col width="60">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
                     <tr>
                         <th>小时（H）</th>
                         <th>中小客（辆）</th>
@@ -272,36 +271,185 @@
                         <th>拖拉机（辆）</th>
                         <th>摩托车（辆）</th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0:05</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td>1234/58</td>
-                        <td class="layui-text"><a href="">查看小时数据</a></td>
-                    </tr>
-                </tbody>
-            </table>
+                    </thead>
+                </table>
+                <div class="body_scroll" style="max-height:200px;">
+                    <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
+                        <colgroup>
+                            <col width="60">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr><tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                            <tr>
+                                <td>0:05</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                                <td>1234/58</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </form>
 </div>
 
 <script src="../layui/layui.js"></script>
+<script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['jquery', 'laypage', 'element', 'form', 'laydate', 'layer'], function(){
+    layui.use(['jquery', 'laypage', 'element', 'form', 'laydate', 'layer', 'table'], function(){
         var $ = layui.$
             ,laypage = layui.laypage
             ,laydate = layui.laydate
             ,form = layui.form
-            ,layer = layui.layer;
+            ,layer = layui.layer
+            ,table = layui.table;
 
         laypage.render({
             elem: 'page'
@@ -321,9 +469,169 @@
                 , skin: 'layui-layer-darkblue' //样式类名
                 , id: 'layerModal' + type //防止重复弹出
                 , title: ["查看小时数据"]
-                , area: ['600px', 'no']
+                , area: ['1000px', 'no']
                 , id: 'layerModal' + type //防止重复弹出
                 , content: $("#hourDataModal").html()
+                , fixed: false
+                , success: function(layero, index) {
+                    $(layero).find('.line').attr("id","line");
+                    var modalDom = $(layero).find("#line")[0];
+                    var modalMyChart = echarts.init(modalDom);
+                    option = null;
+                    option = {
+                        title: {
+                            text: null
+                        },
+                        tooltip : {
+                            trigger: 'axis',
+                            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                            },
+                            textStyle: {
+                                fontSize: 12
+                            }
+                        },
+                        legend: {
+                            bottom: 10,
+                            orient: 'horizontal',
+                            data: ['上行','下行','断面'],
+                            textStyle: {
+                                color:'#999'
+                            }
+                        },
+                        grid: {
+                            left: '2%',
+                            right: '2%',
+                            bottom: '20%',
+                            top:'13%',
+                            containLabel: true
+                        },
+                        xAxis: {
+                            type: 'category',
+                            data: ['00:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00',"22:00"],
+                            boundaryGap: false,
+                            splitLine: {
+                                show: true,
+                                interval: 0,
+                                lineStyle: {
+                                    color: ['#ccc']
+                                }
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#999'
+                                }
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: '#999',//坐标值得具体的颜色
+
+                                }
+                            }
+                        },
+                        yAxis: {
+                            name:'单位（辆）',
+                            nameGap: 10,
+                            type: 'value',
+                            splitLine: {
+                                lineStyle: {
+                                    color: ['#ccc']
+                                }
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#999'
+                                }
+                            },
+                            axisLabel: {
+                                textStyle: {
+                                    color: '#999',//坐标值得具体的颜色
+
+                                }
+                            }
+                        },
+                        series: [{
+                            name: '上行',
+                            type: 'line',
+                            data: ['1200', '1400', '1008', '1411', '1026', '1288', '1300', '800', '1100', '1000', '1118', '1322', '1200', '1400', '1008', '1411', '1026', '1288', '1300', '800', '1100', '1000', '1118', '1322'],
+                            areaStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: 'rgba(252, 174, 136,0.5)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(252, 174, 136,0.1)'
+                                    }], false)
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#fcae88'
+                                }
+                            },
+                            lineStyle: {
+                                normal: {
+                                    width: 2
+                                }
+                            }
+                        }, {
+                            name: '下行',
+                            type: 'line',
+                            data: ['1200', '1400', '808', '811', '626', '488', '1600', '1100', '500', '300', '1998', '822', '1200', '1400', '808', '811', '626', '488', '1600', '1100', '500', '300', '1998', '822'],
+                            areaStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: 'rgba(172, 181, 246,0.5)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(172, 181, 246,0.1)'
+                                    }], false)
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#acb5f6'
+                                }
+                            },
+                            lineStyle: {
+                                normal: {
+                                    width: 2
+                                }
+                            }
+                        }, {
+                            name: '断面',
+                            type: 'line',
+                            data: ['120', '140', '80', '81', '66', '48', '160', '100', '50', '30', '198', '22', '100', '100', '88', '81', '66', '48', '160', '110', '50', '30', '198', '82'],
+                            areaStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: 'rgba(160, 206, 160,0.5)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(160, 206, 160,0.1)'
+                                    }], false)
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#a0cea0'
+                                }
+                            },
+                            lineStyle: {
+                                normal: {
+                                    width: 2
+                                }
+                            }
+                        }]
+                    };
+                    ;
+                    if (option && typeof option === "object") {
+                        modalMyChart.setOption(option, true);
+                    }
+                }
             });
         });
     });

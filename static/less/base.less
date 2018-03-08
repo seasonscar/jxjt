@@ -6,6 +6,9 @@
 body, input, textarea, select, button {
   color:#666;
 }
+html, body {
+  min-height:100%;
+}
 body {
   font-family: "Microsoft YaHei";
 }
@@ -491,6 +494,9 @@ body {
 .common_color_blue {
   color:#2aabe4;
 }
+.common_color_gray {
+  color:#999;
+}
 
 /* 弹框自定义 */
 .layui-layer {
@@ -510,7 +516,7 @@ body {
       height:auto !important;
       overflow:visible;
       .modal_body {
-        padding:20px 20px 5px 20px;
+        padding:20px;
         .layui-form-item {
           .layui-form-label {
             width:120px;
@@ -536,5 +542,32 @@ body {
       }
     }
 
+  }
+}
+
+/* 表格头部固定 */
+.table_body_scroll {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  -moz-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: 1px solid #ccc;
+  table {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+  > table {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  .body_scroll {
+    overflow-y: auto;
+    overflow-x:hidden;
+    > table {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
   }
 }

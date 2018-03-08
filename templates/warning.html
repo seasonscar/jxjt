@@ -13,8 +13,6 @@
     <script src="../static/js/html5.min.js"></script>
     <script src="../static/js/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 </head>
 <body class="body_bg">
 
@@ -271,6 +269,8 @@
 </div>
 
 <script src="../layui/layui.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 <script>
     //一般直接写在一个js文件中
     layui.use(['laypage', 'element', 'form', 'layer'], function(){
@@ -294,6 +294,7 @@
                 , title: ["告警配置"]
                 , area: ['600px', 'no']
                 , id: 'layerModal' + type //防止重复弹出
+                , fixed: false
                 , content: $("#configModal").html()
             });
             form.render();

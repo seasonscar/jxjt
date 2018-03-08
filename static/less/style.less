@@ -329,7 +329,10 @@
 }
 
 /* 首页-地图 */
-#index {
+#map {
+  #container {
+    overflow:hidden;
+  }
   .side_bar_menu {
     position: fixed;
     z-index: 4;
@@ -391,14 +394,14 @@
     right:0;
     bottom:0;
     top:0;
-    width:300px;
+    width:260px;
     z-index:4;
     background: rgba(0, 0, 0, 0.2);
     .counts {
       position: absolute;
       top: 50%;
       right: 0;
-      left: 50px;
+      left: 40px;
       margin-top: -175px;
       .count {
         color:#999;

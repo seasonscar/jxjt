@@ -161,7 +161,7 @@
                                     <td>1234/58</td>
                                     <td>1234/58</td>
                                     <td>1234/58</td>
-                                    <td class="layui-text"><a href="">查看小时数据</a></td>
+                                    <td class="layui-text"><a href="javascript:;" id="hourDataModalBtn" type="data">查看小时数据</a></td>
                                 </tr>
                                 <tr>
                                     <td>0:05</td>
@@ -240,12 +240,68 @@
     <div class="layui-footer" id="footer"></div>
 </div>
 
+<!-- 查看小时数据 -->
+<div id="hourDataModal" style="display:none;">
+    <form class="layui-form font_12" action="">
+        <div class="modal_body">
+            <div id="line" style="height: 150px;"></div>
+            <table class="layui-table style_1" lay-size="sm" lay-skin="nob">
+                <colgroup>
+                    <col width="60">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>小时（H）</th>
+                        <th>中小客（辆）</th>
+                        <th>大客车（辆）</th>
+                        <th>小货车（辆）</th>
+                        <th>中货车（辆）</th>
+                        <th>大货车（辆）</th>
+                        <th>特大货（辆）</th>
+                        <th>集装箱（辆）</th>
+                        <th>拖拉机（辆）</th>
+                        <th>摩托车（辆）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0:05</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td>1234/58</td>
+                        <td class="layui-text"><a href="">查看小时数据</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['laypage', 'element', 'form', 'laydate'], function(){
-        var laypage = layui.laypage
-            ,laydate = layui.laydate;
+    layui.use(['jquery', 'laypage', 'element', 'form', 'laydate', 'layer'], function(){
+        var $ = layui.$
+            ,laypage = layui.laypage
+            ,laydate = layui.laydate
+            ,form = layui.form
+            ,layer = layui.layer;
 
         laypage.render({
             elem: 'page'
@@ -255,6 +311,20 @@
         laydate.render({
             elem: '#date'
             ,theme: 'blue',
+        });
+
+        //查看小时数据弹框触发事件
+        $("#hourDataModalBtn").click(function(){
+            var type = $(this).data("type");
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , id: 'layerModal' + type //防止重复弹出
+                , title: ["查看小时数据"]
+                , area: ['600px', 'no']
+                , id: 'layerModal' + type //防止重复弹出
+                , content: $("#hourDataModal").html()
+            });
         });
     });
 

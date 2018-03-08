@@ -121,7 +121,7 @@
                                             <label class="layui-form-label">观测日期</label>
                                             <div class="layui-input-inline">
                                                 <input type="text" name="date" id="date" placeholder="" autocomplete="off" class="layui-input">
-                                                <span class="iconfont icon-riqi"></span>
+                                                <span class="iconfont icon-riqi" onclick="dateSelect()"></span>
                                             </div>
                                             <label class="layui-form-label">车道编号</label>
                                             <div class="layui-input-inline">
@@ -232,6 +232,7 @@
 </div>
 
 <script src="../layui/layui.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
 <script>
     //一般直接写在一个js文件中
     layui.use(['laypage', 'element', 'form', 'laydate'], function(){
@@ -429,6 +430,11 @@
     ;
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
+    }
+
+    function dateSelect() {
+        console.log( $("#date"))
+        $("#date")[0].trigger("onclick");
     }
 </script>
 </body>

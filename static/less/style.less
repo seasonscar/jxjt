@@ -339,6 +339,8 @@
     -moz-transition: all .3s ease-in; /* Firefox 4 */
     -webkit-transition: all .3s ease-in; /* Safari 和 Chrome */
     -o-transition: all .3s ease-in; /* Opera */
+    animation:sidebarmove 2s;
+    -webkit-animation:sidebarmove 2s; /* Safari 和 Chrome */
     position: fixed;
     z-index: 4;
     background: rgba(2,21,53,0.6);
@@ -431,6 +433,19 @@
     }
 
   }
+}
+@keyframes sidebarmove
+{
+  0% {left:0px;}
+  50% {left:0px;}
+  100% {left:-58px;}
+}
+
+@-webkit-keyframes sidebarmove /*Safari and Chrome*/
+{
+  0% {left:0px;}
+  50% {left:0px;}
+  100% {left:-58px;}
 }
 .tooltip_pop {
   margin-top:14px;

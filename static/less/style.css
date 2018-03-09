@@ -259,6 +259,96 @@
 #warning .warning_list .layui-table tbody tr td:first-child {
   color: #666;
 }
+/* 首页-地图 */
+#map #container {
+  overflow: hidden;
+}
+#map .side_bar_menu {
+  position: fixed;
+  z-index: 4;
+  background: rgba(2, 21, 53, 0.6);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  top: 10%;
+  left: 0;
+}
+#map .side_bar_menu .head_img {
+  text-align: center;
+  padding: 15px 0;
+}
+#map .side_bar_menu .head_img > img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+#map .side_bar_menu ul.layui-nav-tree {
+  width: auto;
+  background: none;
+}
+#map .side_bar_menu ul.layui-nav-tree li.layui-nav-item a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+}
+#map .side_bar_menu ul.layui-nav-tree li.layui-nav-item a:hover {
+  background: none;
+}
+#map .side_bar_menu ul.layui-nav-tree li.layui-nav-item.layui-this {
+  background: none;
+}
+#map .side_bar_menu ul.layui-nav-tree li.layui-nav-item.layui-this a {
+  color: #fff;
+  background-color: rgba(31, 41, 94, 0.6);
+}
+#map .side_bar_menu ul.layui-nav-tree li.layui-nav-item.layui-this a:after {
+  content: '';
+  display: block;
+  width: 5px;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  bottom: 0;
+  background-color: #f7941f;
+}
+#map .side_bar_menu ul.layui-nav-tree .layui-nav-bar {
+  background: #f7941f;
+  right: -5px;
+  left: auto;
+}
+#map .side_bar_count {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 260px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.2);
+}
+#map .side_bar_count .counts {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 40px;
+  margin-top: -175px;
+}
+#map .side_bar_count .counts .count {
+  color: #999;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#map .side_bar_count .counts .count .num {
+  font-size: 32px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+#map .side_bar_count .counts .count .title {
+  padding-top: 10px;
+}
+#map .side_bar_count .counts .count .title > span {
+  font-size: 12px;
+  margin-right: 5px;
+}
 @media screen and (max-height: 710px) {
   #login {
     top: 0;

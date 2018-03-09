@@ -391,7 +391,8 @@
     }
 
     option = {
-        backgroundColor: '#021535',
+        //backgroundColor: '#021535',
+        backgroundColor: '#031535',
         animation: true,
         animationDuration: 1000,
         animationEasing: 'cubicInOut',
@@ -433,8 +434,17 @@
             roam: true,
             itemStyle: {
                 normal: {
+                    areaColor: '#323c48',
+                    borderColor: '#111'
+                },
+                emphasis: {
+                    areaColor: '#2a333d'
+                }
+            }
+          /*  itemStyle: {
+                normal: {
                     areaColor: 'transparent',
-                    //borderColor: '#111',
+                    borderColor: '#111',
                     borderColor: '#3fdaff',
                     borderWidth: 1,
                     shadowColor: 'rgba(63, 218, 255, 0.5)',
@@ -443,7 +453,7 @@
                 emphasis: {
                     areaColor: '#2a333d'
                 }
-            }
+            }*/
         },
         tooltip : {
             trigger: 'item',
@@ -518,9 +528,12 @@
                 },
                 itemStyle: {
                     normal: {
-                        color: '#f4e925',
-                        shadowBlur: 10,
-                        shadowColor: '#333'
+                        //color: '#f4e925',
+                        //color: '#111',
+                        //shadowBlur: 10,
+                        //shadowColor: '#333'
+                        areaColor: '#323c48',
+                        borderColor: '#111'
                     }
                 },
                 zlevel: 1

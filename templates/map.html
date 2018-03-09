@@ -15,14 +15,15 @@
     <![endif]-->
     <style>
         .tooltip{
-            background: url("../static/img/tooltip.png") top left no-repeat;
+          /*  background: url("../static/img/tooltip.png") top left no-repeat;
             width:127px;
             height:93px;
-            padding:13px 10px 10px 10px;
+            padding:13px 10px 10px 10px;*/
             line-height:normal;
-            background-size:100%;
+           /* background-size:100%; */
             transition:none !important;
         }
+
         .tips{
             /*padding:25px 0px 0px 20px;*/
         }
@@ -79,8 +80,6 @@
 <script type="text/javascript">
     //一般直接写在一个js文件中
     layui.use('element');
-
-
 
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
@@ -297,40 +296,6 @@
         {name: "胶南", value: 22,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "南通", value: 23,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "拉萨", value: 24,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "云浮", value: 24,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "梅州", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "文登", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "上海", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "攀枝花", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "威海", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "承德", value: 25,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "厦门", value: 26,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "汕尾", value: 26,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "潮州", value: 26,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "丹东", value: 27,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "太仓", value: 27,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "咸阳", value: 43,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "铜川", value: 44,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "平度", value: 44,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "佛山", value: 44,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "海口", value: 44,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "江门", value: 45,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "章丘", value: 45,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "肇庆", value: 46,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "大连", value: 47,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "临汾", value: 47,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "吴江", value: 47,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "石嘴山", value: 49,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "沈阳", value: 50,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "苏州", value: 50,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "茂名", value: 50,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "嘉兴", value: 51,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "长春", value: 51,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "胶州", value: 52,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "银川", value: 52,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "张家港", value: 52,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "三门峡", value: 53,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "锦州", value: 54,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "南昌", value: 54,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "柳州", value: 54,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "东营", value: 62,jsl:"1%",wzl:"1%",alarmInfo:""},
@@ -343,19 +308,6 @@
         {name: "芜湖", value: 117,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "唐山", value: 119,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "平顶山", value: 119,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "邢台", value: 119,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "德州", value: 120,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "济宁", value: 120,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "荆州", value: 127,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "宜昌", value: 130,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "义乌", value: 132,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "丽水", value: 133,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "洛阳", value: 134,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "秦皇岛", value: 136,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "株洲", value: 143,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "石家庄", value: 147,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "莱芜", value: 148,jsl:"1%",wzl:"1%",alarmInfo:""},
-        {name: "常德", value: 152,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "保定", value: 153,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "湘潭", value: 154,jsl:"1%",wzl:"1%",alarmInfo:""},
         {name: "金华", value: 157,jsl:"1%",wzl:"1%",alarmInfo:""},
@@ -409,7 +361,7 @@
                 }
             }
         ],
-        visualMap: {
+        /*visualMap: {
             min: 0,
             max: 200,
             calculable: true,
@@ -419,12 +371,12 @@
             textStyle: {
                 color: '#fff'
             }
-        },
+        },*/
         geo: {
             map: 'china',
             top: '10',
             bottom: '10',
-            //center: [117.98561551896913, 31.205000490896193],
+            left:'10%',
             zoom: 1,
             label: {
                 emphasis: {
@@ -435,10 +387,11 @@
             itemStyle: {
                 normal: {
                     areaColor: '#323c48',
-                    borderColor: '#111'
+                    borderColor: '#111',
                 },
                 emphasis: {
-                    areaColor: '#2a333d'
+                    areaColor: '#2a333d',
+                    shadowBlur: 10
                 }
             }
           /*  itemStyle: {
@@ -474,36 +427,12 @@
                         alarmInfo=data[i].alarmInfo;
                     }
                 }
-                var html="<div class='tooltip'><div class='tips'><span style='font-size:12px;color:#fff'>";
-                html+=params.name+"某站点</span><br><span style='font-size:12px;color:#fff'>及时率:"+cityJsl+"</span><br><span style='font-size:12px;color:#fff'>完整率:"+cityWzl+"</span><br><span style='font-size:12px;color:#fff'>告警:"+alarmInfo+"</span></div>";
+                var html="<div class='tooltip tooltip_pop' style='margin-top:14px;position:relative;'><div class='tips'><span style='font-size:12px;color:#fff'>";
+                html+=params.name+"某站点</span><br><span style='font-size:12px;color:#f1f1f1'>及时率:"+cityJsl+"</span><br><span style='font-size:12px;color:#f1f1f1'>完整率:"+cityWzl+"</span><br><span style='font-size:12px;color:#f1f1f1'>告警:"+alarmInfo+"</span></div>";
+                html += "<div class='arrow left_top'></div><div class='arrow left_bottom'></div><div class='arrow right_top'></div><div class='arrow right_bottom'></div><div class='pop_arrow'></div>";
                 html+="</div>";
                 return html;
             },
-        },
-        grid: {
-            right: 40,
-            top: 100,
-            bottom: 40,
-            width: '30%',
-        },
-        xAxis: {
-            type: 'value',
-            scale: true,
-            position: 'top',
-            boundaryGap: false,
-            splitLine: {show: false},
-            axisLine: {show: false},
-            axisTick: {show: false},
-            axisLabel: {margin: 2, textStyle: {color: '#aaa'}},
-        },
-        yAxis: {
-            type: 'category',
-            name: '',
-            nameGap: 16,
-            axisLine: {show: false, lineStyle: {color: '#ddd'}},
-            axisTick: {show: false, lineStyle: {color: '#ddd'}},
-            axisLabel: {interval: 0, textStyle: {color: '#ddd'}},
-            data: []
         },
         series : [
             {
@@ -514,7 +443,7 @@
                 symbolSize: function (val) {
                     return Math.max(val[2] / 10, 8);
                 },
-                showEffectOn: 'emphasis',
+                showEffectOn: 'render',
                 rippleEffect: {
                     brushType: 'stroke'
                 },
@@ -523,17 +452,18 @@
                     normal: {
                         formatter: '{b}',
                         position: 'right',
-                        show: true
-                    }
+                        show: true,
+                        color: '#ccc'
+                    },
                 },
                 itemStyle: {
                     normal: {
                         //color: '#f4e925',
-                        //color: '#111',
+                        color: 'rgba(255,255,0,.5)',
                         //shadowBlur: 10,
                         //shadowColor: '#333'
-                        areaColor: '#323c48',
-                        borderColor: '#111'
+                        //areaColor: '#323c48',
+                        //borderColor: '#111'
                     }
                 },
                 zlevel: 1
@@ -549,21 +479,23 @@
                 },
                 showEffectOn: 'render',
                 rippleEffect: {
-                    brushType: 'stroke'
+                    brushType: 'fill'
                 },
                 hoverAnimation: true,
                 label: {
                     normal: {
                         formatter: '{b}',
                         position: 'right',
-                        show: true
+                        show: true,
+                        fontWeight: 'bold'
+                        //color: '#fff'
                     }
                 },
                 itemStyle: {
                     normal: {
                         color: '#f42130',
                         shadowBlur: 10,
-                        shadowColor: '#333'
+                        shadowColor: '#333',
                     }
                 },
                 zlevel: 1

@@ -179,6 +179,7 @@ body {
 }
 .well > h4 > .layui-input-inline .layui-form-item > .layui-inline > .layui-input-inline input[type="text"] {
   height: 26px;
+  line-height: 24px;
 }
 .well > h4 > .layui-input-inline .layui-form-item > .layui-inline > .layui-input-inline span.iconfont {
   position: absolute;
@@ -198,6 +199,7 @@ body {
 }
 .search > input[type="text"] {
   height: 26px;
+  line-height: 24px;
   border-radius: 20px;
   padding-right: 28px;
   font-size: 12px;

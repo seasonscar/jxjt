@@ -341,13 +341,19 @@
 <script src="../layui/layui.js"></script>
 <script>
     //一般直接写在一个js文件中
-    layui.use(['element'], function(){
-        var element = layui.element;
+    layui.use(['jquery', 'laypage', 'element', 'layer', 'form'], function(){
+        var $ = layui.$
+            ,laypage = layui.laypage
+            ,layer = layui.layer
+            ,form = layui.form;
 
-
-
+        laypage.render({
+            elem: 'page'
+            ,count: 10 //数据总数，从服务端得到
+            ,theme: '#1E9FFF' //自定义选中色值
+        });
         //添加设备弹框触发事件
-        $("#addDevModalBtn").click(function(){
+        $("#addDevModalBtn").click(function(){console.log(11);
             var type = $(this).data("type");
             layer.open({
                 type: 1

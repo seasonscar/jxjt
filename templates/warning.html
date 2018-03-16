@@ -28,7 +28,7 @@
                 <li class="layui-nav-item"><a href="device.html"><i class="iconfont icon-icon-"></i>设备</a></li>
                 <li class="layui-nav-item"><a href="flow.html"><i class="iconfont icon-liuliang"></i>流量</a></li>
                 <li class="layui-nav-item layui-this"><a href="warning.html"><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
-                <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
+                <li class="layui-nav-item nav_user"> <a href="">admin<img src="../static/img/headImg/default.jpg" class="layui-nav-img"></a></li>
                 <li class="layui-nav-item nav_logout"><a href="login.html"><i class="iconfont icon-tuichu4"></i></a></li>
             </ul>
         </div>
@@ -110,7 +110,7 @@
                                     <td>控制异常关闭</td>
                                     <td>待处理</td>
                                     <td>2018-01-25&nbsp;12:00:00</td>
-                                    <td class="layui-text"><a href="">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                    <td class="layui-text"><a href="javascript:;" class="makeSure">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="makeIgnore">忽略</a></td>
                                 </tr>
                                 <tr class="text_orange">
                                     <td>02</td>
@@ -118,7 +118,7 @@
                                     <td>控制异常关闭</td>
                                     <td>待处理</td>
                                     <td>2018-01-25&nbsp;12:00:00</td>
-                                    <td class="layui-text"><a href="">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                    <td class="layui-text"><a href="javascript:;" class="makeSure">确认</a>&nbsp;&nbsp;&nbsp;<a href="">解决</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="makeIgnore">忽略</a></td>
                                 </tr>
                                 <tr class="text_green">
                                     <td>03</td>
@@ -134,7 +134,7 @@
                                     <td>控制异常关闭</td>
                                     <td>已确认</td>
                                     <td>2018-01-25&nbsp;12:00:00</td>
-                                    <td class="layui-text"><a href="">处理</a>&nbsp;&nbsp;&nbsp;<a href="">忽略</a></td>
+                                    <td class="layui-text"><a href="">处理</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;" class="makeIgnore">忽略</a></td>
                                 </tr>
                                 <tr>
                                     <td>05</td>
@@ -268,6 +268,28 @@
     </form>
 </div>
 
+<!-- 确认提示框 -->
+<div id="msgSureModal" style="display:none;">
+    <div class="modal_body">
+        <div class="text_center">确定“确认”吗？</div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary" onclick="layer.close(layer.index)">取消</button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="layer.close(layer.index)">确定</button>
+    </div>
+</div>
+<!-- 忽略提示框 -->
+<div id="msgIgnoreModal" style="display:none;">
+    <div class="modal_body">
+        <div class="text_center">确定“忽略”吗？</div>
+    </div>
+    <div class="modal_footer">
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary" onclick="layer.close(layer.index)">取消</button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="layer.close(layer.index)">确定</button>
+    </div>
+</div>
+
+
 <script src="../layui/layui.js"></script>
 <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
@@ -293,12 +315,33 @@
                 , id: 'layerModal' + type //防止重复弹出
                 , title: ["告警配置"]
                 , area: ['600px', 'no']
-                , id: 'layerModal' + type //防止重复弹出
                 , fixed: false
                 , content: $("#configModal").html()
             });
             form.render();
         });
+        //询问框
+        $(".warning_list").on("click", ".makeSure", function(){
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , title: ["提示"]
+                , area: ['300px', 'no']
+                , fixed: false
+                , content: $("#msgSureModal").html()
+            });
+        });
+        $(".warning_list").on("click", ".makeIgnore", function(){
+            layer.open({
+                type: 1
+                , skin: 'layui-layer-darkblue' //样式类名
+                , title: ["提示"]
+                , area: ['300px', 'no']
+                , fixed: false
+                , content: $("#msgIgnoreModal").html()
+            });
+        });
+
     });
 
     function dateRangeSelect(obj) { //选择筛选的日期范围

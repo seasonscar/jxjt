@@ -28,7 +28,7 @@
                 <li class="layui-nav-item"><a href="device.html"><i class="iconfont icon-icon-"></i>设备</a></li>
                 <li class="layui-nav-item layui-this"><a href="flow.html"><i class="iconfont icon-liuliang"></i>流量</a></li>
                 <li class="layui-nav-item"><a href="warning.html"><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
-                <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
+                <li class="layui-nav-item nav_user"> <a href="">admin<img src="../static/img/headImg/default.jpg" class="layui-nav-img"></a></li>
                 <li class="layui-nav-item nav_logout"><a href="login.html"><i class="iconfont icon-tuichu4"></i></a></li>
             </ul>
         </div>
@@ -87,7 +87,7 @@
                             </div>
                         </h4>
                         <div class="well_content">
-                            <div id="bar" style="height: 150px;"></div>
+                            <div id="bar" style="height: 200px;"></div>
                         </div>
                     </div>
                     <!-- 交通量数据 -->
@@ -535,6 +535,7 @@
                             name:'单位（辆）',
                             nameGap: 10,
                             type: 'value',
+                            splitNumber: 4,
                             splitLine: {
                                 lineStyle: {
                                     color: ['#ccc']
@@ -702,7 +703,7 @@
         ],
         series : [
             {
-                name:'大车',
+                name:'中小客',
                 color:'#9cb0e3',
                 type:'bar',
                 barWidth: 10,
@@ -710,15 +711,57 @@
                 data:[120, 132, 101, 134, 90, 230, 210, 210, 250, 210, 210, 210, 240, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
             },
             {
-                name:'中车',
+                name:'大客车',
                 color:'#fba78b',
                 type:'bar',
                 stack: '流量',
                 data:[150, 232, 201, 154, 190, 330, 410, 210, 230, 210, 220, 210, 210, 260, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
             },
             {
-                name:'小车',
+                name:'小货车',
                 color:'#88e2d8',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'中货车',
+                color:'#C7E1F0',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'大货车',
+                color:'#C9BF8E',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'特大货',
+                color:'#86E65A',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'集装箱',
+                color:'#CA836F',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'拖拉机',
+                color:'#FAAE4E',
+                type:'bar',
+                stack: '流量',
+                data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]
+            },
+            {
+                name:'摩托车',
+                color:'#EB7488',
                 type:'bar',
                 stack: '流量',
                 data:[150, 232, 201, 154, 190, 330, 410, 210, 240, 230, 210, 210, 210, 280, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210, 210]

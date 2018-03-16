@@ -38,6 +38,7 @@
             word-wrap: break-word
         }
     </style>
+    <!--<script type="text/javascript" src="../static/js/map/apiv1.1.min.js"></script>-->
     <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
     <script type="text/javascript" src="../static/js/echarts/echarts.min.js"></script>
 </head>
@@ -55,7 +56,7 @@
                 <li class="layui-nav-item layui-this"><a href="device.html"><i class="iconfont icon-icon-"></i>设备</a></li>
                 <li class="layui-nav-item"><a href="flow.html"><i class="iconfont icon-liuliang"></i>流量</a></li>
                 <li class="layui-nav-item"><a href="warning.html"><i class="iconfont icon-gaojingxinxi"></i>告警</a></li>
-                <li class="layui-nav-item nav_user"> <a href="">admin<img src="http://t.cn/RCzsdCq" class="layui-nav-img"></a></li>
+                <li class="layui-nav-item nav_user"> <a href="">admin<img src="../static/img/headImg/default.jpg" class="layui-nav-img"></a></li>
                 <li class="layui-nav-item nav_logout"><a href="login.html"><i class="iconfont icon-tuichu4"></i></a></li>
             </ul>
         </div>
@@ -92,7 +93,7 @@
                             <div style="width:250px;height:150px;border:#ccc solid 1px;" class="map" id="map"></div>
                             <div class="info">
                                 <div class="layui-inline">
-                                    <p class="text_ellipsis" title="设备识别码：0071154316060122">设备识别码：<a href="">0071154316060122</a></p>
+                                    <p class="text_ellipsis" title="设备识别码：0071154316060122">设备识别码：0071154316060122</p>
                                     <p class="text_ellipsis" title="设备型号：JYX-I-C">设备型号：JYX-I-C</p>
                                     <p class="text_ellipsis" title="观测类型：断面">观测类型：断面</p>
                                     <p class="text_ellipsis" title="生产厂商：辽宁金洋科技发展集团有限公司">生产厂商：辽宁金洋科技发展集团有限公司</p>
@@ -300,7 +301,7 @@
         map.addControl(ctrl_sca);
     }
 
-    var myIcon = new BMap.Icon("../static/img/markers.png", new BMap.Size(22, 25), {
+    var myIcon = new BMap.Icon("../static/js/map/img/markers.png", new BMap.Size(22, 25), {
         offset: new BMap.Size(12, 20), // 指定定位位置
         imageOffset: new BMap.Size(1, 0 - 10 * 27.6) // 设置图片偏移
     });
@@ -426,7 +427,7 @@
                 data: [
                     {
                         value: [60,73,85,40],
-                        name: '某软件'
+                        name: '设备信息'
                     }
                 ]
             }
